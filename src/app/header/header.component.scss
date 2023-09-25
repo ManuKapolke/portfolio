@@ -16,11 +16,11 @@
         background-image: var(--logoA);
         background-size: contain;
         background-repeat: no-repeat;
-        transition: all 250ms ease-in-out;
+        transition: all var(--transitionTime) ease-in-out;
 
         &:hover {
             background-image: var(--logoB);
-            transition: all 250ms ease-in-out;
+            transition: all var(--transitionTime) ease-in-out;
         }
     }
 
@@ -34,11 +34,11 @@
         a {
             text-decoration: none;
             color: unset;
-            transition: all 125ms ease-in-out;
+            transition: all var(--transitionTime) ease-in-out;
 
             &:hover {
                 color: var(--mainColorB);
-                transition: all 125ms ease-in-out;
+                transition: all var(--transitionTime) ease-in-out;
             }
         }
     }

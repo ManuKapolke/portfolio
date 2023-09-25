@@ -13,16 +13,16 @@
         justify-content: center;
 
         .photo {
-            width: 400px;
+            width: 360px;
             z-index: 1;
         }
 
         .photo-background-shape {
             position: absolute;
-            top: 60px;
-            left: calc(-0.5 * (680px - 400px));
-            width: 680px;
-            height: 640px;
+            top: -30px;
+            left: calc(-0.5 * (872px - 360px));
+            // width: 872px;
+            // height: 820px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -34,7 +34,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: 40vh;
+        height: 33vh;
         width: 100%;
         z-index: 1;
     }
@@ -57,8 +57,8 @@
         .main-title-left {
             writing-mode: vertical-lr;
             transform: rotate(-180deg);
-            font-size: 64px;
-            letter-spacing: 5px;
+            font-size: 62px;
+            letter-spacing: 3px;
             white-space: nowrap;
             margin-bottom: 3px;
         }
@@ -67,17 +67,120 @@
             white-space: nowrap;
 
             .manu {
-                font-size: 90px;
+                font-size: 80px;
                 font-weight: 700;
-                // line-height: 125%;
+                text-decoration: underline;
+                text-decoration-color: var(--mainColorB);
+                text-decoration-thickness: 4px;
+                text-underline-offset: 16px;
             }
 
             .frontend {
-                font-size: 58px;
+                font-size: 60px;
                 color: var(--mainColorA);
                 line-height: 100%;
-                letter-spacing: 2.6px;
+                letter-spacing: 5px;
             }
         }
+    }
+
+    .contact-bar {
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 40px;
+        z-index: 3;
+
+        .h-line {
+            width: 100px;
+            height: 4px;
+            border: 2px solid var(--mainColorA);
+            border-top-right-radius: 1px;
+            border-bottom-right-radius: 1px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+
+            svg {
+                scale: 0.8;
+                transition: all var(--transitionTime) ease-in-out;
+
+                path {
+                    transition: all var(--transitionTime) ease-in-out;
+                }
+            }
+
+            &:hover {
+
+                svg {
+                    scale: 1;
+                    transition: all var(--transitionTime) ease-in-out;
+
+                    path {
+                        fill: var(--mainColorB);
+                        transition: all var(--transitionTime) ease-in-out;
+                    }
+                }
+            }
+        }
+
+        .email {
+            font-size: 24px;
+            cursor: pointer;
+            transition: all var(--transitionTime) ease-in-out;
+
+            &:hover {
+                transition: all var(--transitionTime) ease-in-out;
+                color: var(--mainColorB);
+            }
+        }
+    }
+
+    .scroll-down {
+        position: absolute;
+        bottom: 40px;
+        right: var(--paddingLR);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 8px;
+        z-index: 3;
+        cursor: pointer;
+
+        span {
+            font-size: 24px;
+            writing-mode: vertical-lr;
+        }
+
+        .arrow-down {
+            height: 30px;
+
+            svg {
+                scale: 1.1;
+                margin-left: 6px;
+                animation: pointDown 2s infinite;
+            }
+        }
+    }
+}
+
+@keyframes pointDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(8px);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }

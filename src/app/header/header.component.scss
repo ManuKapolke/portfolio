@@ -12,13 +12,13 @@
         height: 60px;
         width: 90px;
         cursor: pointer;
-        background-image: url('../../assets/logo/v2_mk-logo_a.png');
+        background-image: var(--logoA);
         background-size: contain;
         background-repeat: no-repeat;
         transition: all 250ms ease-in-out;
 
         &:hover {
-            background-image: url('../../assets/logo/v2_mk-logo_b.png');
+            background-image: var(--logoB);
             transition: all 250ms ease-in-out;
         }
     }

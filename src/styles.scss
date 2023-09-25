@@ -9,6 +9,8 @@ Variables
     --mainColorB: #00BEE8;
     --logoA: url('assets/logo/v2_mk-logo_a.png');
     --logoB: url('assets/logo/v2_mk-logo_b.png');
+    --headerHeight: 110px;
+    --paddingLR: 100px;
 }
 
 
@@ -63,11 +65,64 @@ Fonts
 /*--------------------------------------------------
 Base
 ---------------------------------------------------*/
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-family: 'Poppins', sans-serif;
 }
 
 body {
+    margin: 0;
+    padding-top: 110px;
     background-color: var(--bgColor);
     color: white;
+}
+
+/*--------------------------------------------------
+Buttons
+---------------------------------------------------*/
+.btn {
+    cursor: pointer;
+    padding: 15px 30px;
+    border-radius: 10px;
+    z-index: 3;
+    color: white;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    white-space: nowrap;
+    box-shadow: 4px 4px 4px 0px #00000040;
+    transition: all 250ms ease-in-out;
+}
+
+.btn-filled-A {
+    background-color: var(--mainColorA);
+
+    &:hover {
+        background-color: var(--mainColorB);
+        transition: all 250ms ease-in-out;
+    }
+}
+
+.btn-filled-B {
+    background-color: var(--mainColorB);
+
+    &:hover {
+        background-color: var(--mainColorA);
+        transition: all 250ms ease-in-out;
+        transform: scale(1.1);
+    }
+}
+
+.btn-unfilled {
+    background-color: rgba(var(--bgColor), 0.3);
+    border: 1px solid var(--mainColorB);
+    box-shadow: 0 0 3px 1px var(--mainColorB), inset 0 0 3px 1px var(--mainColorB) !important;
+
+    &:hover {
+        background-color: var(--mainColorB);
+        transition: all 250ms ease-in-out;
+    }
 }

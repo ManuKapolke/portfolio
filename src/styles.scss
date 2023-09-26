@@ -94,14 +94,18 @@ section {
     display: flex;
 }
 
-h1,
-h2 {
+h1 {
     font-size: 80px;
     font-weight: 700;
     text-decoration: underline;
     text-decoration-color: var(--mainColorB);
     text-decoration-thickness: 4px;
     text-underline-offset: 16px;
+}
+
+h2 {
+    font-size: 80px;
+    font-weight: 700;
 }
 
 /*--------------------------------------------------

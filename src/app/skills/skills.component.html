@@ -1,0 +1,21 @@
+<section id="skills">
+    <div class="skills-icons-container">
+        <div *ngFor="let skill of skills; let i = index" class="skill-icon">
+            <img src="assets/icons/{{ skill.icon }}" alt="angular-icon">
+            <span>{{ skill.name }}</span>
+        </div>
+    </div>
+
+    <div class="skills-text-container">
+        <h2>
+            My Skills
+            <div class="h-line"></div>
+        </h2>
+        <p>
+            I have grown my frontend developments skills that have allowed me to create different real projects.
+        </p>
+        <button class="btn btn-filled-B">Get in touch</button>
+    </div>
+
+    <img class="bg-shape" src="assets/img/bg-shapes/v{{ layoutService.version }}_shadow_skills.png">
+</section>

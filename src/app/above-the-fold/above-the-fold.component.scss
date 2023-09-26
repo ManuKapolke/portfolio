@@ -1,8 +1,4 @@
-.above-the-fold {
-    height: calc(100vh - var(--headerHeight));
-    padding: 0 var(--paddingLR);
-    position: relative;
-    display: flex;
+#above-the-fold {
     align-items: center;
     justify-content: space-between;
 
@@ -66,16 +62,7 @@
         .main-title-right {
             white-space: nowrap;
 
-            .manu {
-                font-size: 80px;
-                font-weight: 700;
-                text-decoration: underline;
-                text-decoration-color: var(--mainColorB);
-                text-decoration-thickness: 4px;
-                text-underline-offset: 16px;
-            }
-
-            .frontend {
+            .sub-title {
                 font-size: 60px;
                 color: var(--mainColorA);
                 line-height: 100%;
@@ -95,7 +82,7 @@
         z-index: 3;
 
         .h-line {
-            width: 100px;
+            width: var(--paddingLR);
             height: 4px;
             border: 2px solid var(--mainColorA);
             border-top-right-radius: 1px;
@@ -153,6 +140,8 @@
         gap: 8px;
         z-index: 3;
         cursor: pointer;
+        text-decoration: none;
+        color: inherit;
 
         span {
             font-size: 24px;

@@ -10,7 +10,7 @@ Variables
     --logoA: url('assets/logo/v2_mk-logo_a.png');
     --logoB: url('assets/logo/v2_mk-logo_b.png');
     --headerHeight: 110px;
-    --paddingLR: 100px;
+    --paddingLR: 10vw;
     --transitionTime: 125ms;
 }
 
@@ -68,6 +68,7 @@ Base
 ---------------------------------------------------*/
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 html {
@@ -77,10 +78,52 @@ html {
 
 body {
     margin: 0;
-    padding-top: 110px;
     background-color: var(--bgColor);
     color: white;
+    overflow-x: hidden;
 }
+
+/*--------------------------------------------------
+Sections and Headlines
+---------------------------------------------------*/
+section {
+    min-height: 100vh;
+    padding: 0 var(--paddingLR);
+    padding-top: var(--headerHeight);
+    position: relative;
+    display: flex;
+}
+
+h1,
+h2 {
+    font-size: 80px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--mainColorB);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 16px;
+}
+
+/*--------------------------------------------------
+Scrollbar
+---------------------------------------------------*/
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+// ::-webkit-scrollbar-track {
+//     background: var(--bgColor);
+// }
+
+::-webkit-scrollbar-thumb {
+    background: var(--mainColorB);
+    border-radius: 6px;
+    -webkit-box-shadow: inset 0 0 4px 3px var(--bgColor);
+}
+
+// ::-webkit-scrollbar-thumb:hover {
+//     background: var(--mainColorA);
+// }
 
 /*--------------------------------------------------
 Buttons

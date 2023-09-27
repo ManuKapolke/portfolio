@@ -11,6 +11,7 @@ Variables
     --logoB: url('assets/logo/v2_mk-logo_b.png');
     --headerHeight: 110px;
     --paddingLR: 10vw;
+    --gapLineText: 40px;
     --transitionTime: 125ms;
 }
 
@@ -174,4 +175,17 @@ Buttons
         background-color: var(--mainColorB);
         transition: all var(--transitionTime) ease-in-out;
     }
+}
+
+/*--------------------------------------------------
+Lines
+---------------------------------------------------*/
+.h-line-A {
+    height: 4px;
+    border: 2px solid var(--mainColorA);
+}
+
+.h-line-B {
+    height: 4px;
+    border: 2px solid var(--mainColorB);
 }

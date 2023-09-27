@@ -1,0 +1,22 @@
+#portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 35px;
+
+    h2 {
+        padding: 0 var(--gapLineText);
+        background-color: var(--bgColor);
+        z-index: 1;
+    }
+
+    .h-line-portfolio {
+        position: absolute;
+        top: 170px;
+        right: 0;
+        width: 75vw;
+        border-top-left-radius: 1px;
+        border-bottom-left-radius: 1px;
+    }
+}

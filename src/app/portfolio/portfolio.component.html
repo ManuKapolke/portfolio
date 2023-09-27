@@ -1,0 +1,7 @@
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="h-line-A h-line-portfolio"></div>
+    <span>This page is a sample of my work - please feel free to try them out.</span>
+
+    <app-project *ngFor="let p of projectListService.projects" [project]="p"></app-project>
+</section>

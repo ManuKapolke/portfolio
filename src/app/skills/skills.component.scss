@@ -37,13 +37,11 @@
         text-align: end;
         position: relative;
 
-        .h-line {
+        .h-line-skills {
             position: absolute;
             top: 60px;
             right: calc(-1 * var(--paddingLR));
-            width: calc(0.6 * var(--paddingLR));
-            height: 4px;
-            border: 2px solid var(--mainColorA);
+            width: calc(var(--paddingLR) - var(--gapLineText));
         }
 
         button {

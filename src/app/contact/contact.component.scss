@@ -1,0 +1,31 @@
+#contact {
+    flex-direction: column;
+    gap: 35px;
+
+    .h-line-contact {
+        position: absolute;
+        top: 168px;
+        left: 0;
+        width: calc(var(--paddingLR) - var(--gapLineText));
+    }
+
+    .text-and-form {
+        display: flex;
+        justify-content: space-between;
+        gap: 10%;
+
+        .contact-text-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    .bg-shape {
+        position: absolute;
+        bottom: -380px;
+        left: -400px;
+        transform: rotate(250deg);
+        z-index: 2;
+    }
+}

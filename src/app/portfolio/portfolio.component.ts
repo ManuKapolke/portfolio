@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProjectListService } from '../project-list.service';
+import { LayoutService } from '../layout.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,5 +8,7 @@ import { ProjectListService } from '../project-list.service';
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent {
-  constructor(public projectListService: ProjectListService) { }
+  constructor(
+    public layoutService: LayoutService,
+    public projectListService: ProjectListService) { }
 }

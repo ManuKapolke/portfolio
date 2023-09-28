@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 35px;
+    padding-bottom: var(--headerHeight);
 
     h2 {
         padding: 0 var(--gapLineText);
@@ -18,5 +19,24 @@
         width: 75vw;
         border-top-left-radius: 1px;
         border-bottom-left-radius: 1px;
+    }
+
+    app-project {
+        z-index: 3;
+    }
+
+    .bg-shape-A {
+        position: absolute;
+        top: 950px;
+        left: -100px;
+        z-index: 2;
+    }
+
+    .bg-shape-B {
+        position: absolute;
+        bottom: -200px;
+        right: -500px;
+        transform: rotate(75deg);
+        z-index: 2;
     }
 }

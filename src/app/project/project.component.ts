@@ -8,4 +8,5 @@ import { Project } from '../project';
 })
 export class ProjectComponent {
   @Input() project!: Project;
+  @Input() reversed: boolean = false;
 }

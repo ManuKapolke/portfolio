@@ -1,0 +1,17 @@
+.project-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 35px;
+
+        .project-buttons {
+            display: flex;
+            gap: 80px;
+        }
+    }
+}

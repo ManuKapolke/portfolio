@@ -34,6 +34,7 @@ form {
 
     textarea {
         margin-bottom: 4px;
+        transition-property: border, box-shadow;
 
         &::-webkit-resizer {
             background: var(--textareaResizer) center no-repeat;

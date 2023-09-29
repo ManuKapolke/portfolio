@@ -10,6 +10,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectComponent } from './project/project.component';
 import { ContactComponent } from './contact/contact.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ContactComponent } from './contact/contact.component';
     SkillsComponent,
     PortfolioComponent,
     ProjectComponent,
-    ContactComponent
+    ContactComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

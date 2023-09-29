@@ -7,8 +7,12 @@ Variables
     --bgColor: #141D2F;
     --mainColorA: #4B47FF;
     --mainColorB: #00BEE8;
+    --errorColor: #E61C40;
+    --doneColor: #70E61C;
     --logoA: url('assets/logo/v2_mk-logo_a.png');
     --logoB: url('assets/logo/v2_mk-logo_b.png');
+    --checkmark: url('assets/icons/v2_checkmark.png');
+    --textareaResizer: url('assets/icons/v2_textarea-resizer.png');
     --headerHeight: 110px;
     --paddingLR: 10vw;
     --gapLineText: 40px;
@@ -70,6 +74,7 @@ Base
 * {
     box-sizing: border-box;
     margin: 0;
+    transition: all var(--transitionTime) ease-in-out;
 }
 
 html {
@@ -156,7 +161,6 @@ Buttons
     font-size: 24px;
     white-space: nowrap;
     box-shadow: 4px 4px 4px 0px #00000040;
-    transition: all var(--transitionTime) ease-in-out;
 }
 
 .btn-filled-A {
@@ -164,7 +168,6 @@ Buttons
 
     &:hover {
         background-color: var(--mainColorB);
-        transition: all var(--transitionTime) ease-in-out;
     }
 }
 
@@ -173,7 +176,6 @@ Buttons
 
     &:hover {
         background-color: var(--mainColorA);
-        transition: all var(--transitionTime) ease-in-out;
         transform: scale(1.1);
     }
 }
@@ -185,7 +187,6 @@ Buttons
 
     &:hover {
         background-color: var(--mainColorB);
-        transition: all var(--transitionTime) ease-in-out;
     }
 }
 
@@ -209,32 +210,23 @@ a {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
-    transition: all var(--transitionTime) ease-in-out;
 }
 
 .text-link:hover {
     color: var(--mainColorB);
-    transition: all var(--transitionTime) ease-in-out;
 }
 
 .svg-link {
     svg {
         scale: 0.8;
-        transition: all var(--transitionTime) ease-in-out;
-
-        path {
-            transition: all var(--transitionTime) ease-in-out;
-        }
     }
 
     &:hover {
         svg {
             scale: 1;
-            transition: all var(--transitionTime) ease-in-out;
 
             path {
                 fill: var(--mainColorB);
-                transition: all var(--transitionTime) ease-in-out;
             }
         }
     }

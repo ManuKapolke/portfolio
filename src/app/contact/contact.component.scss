@@ -15,9 +15,15 @@
         gap: 10%;
 
         .contact-text-container {
+            width: 40%;
             display: flex;
             flex-direction: column;
             gap: 10px;
+        }
+
+        app-contact-form {
+            width: 50%;
+            z-index: 3;
         }
     }
 

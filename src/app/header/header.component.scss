@@ -19,11 +19,9 @@
         background-image: var(--logoA);
         background-size: contain;
         background-repeat: no-repeat;
-        transition: all var(--transitionTime) ease-in-out;
 
         &:hover {
             background-image: var(--logoB);
-            transition: all var(--transitionTime) ease-in-out;
         }
     }
 

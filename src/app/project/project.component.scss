@@ -10,7 +10,6 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        transition: all var(--transitionTime) ease-in-out;
 
         img {
             width: 100%;
@@ -18,7 +17,6 @@
 
         &:hover {
             scale: 0.98;
-            transition: all var(--transitionTime) ease-in-out;
         }
     }
 

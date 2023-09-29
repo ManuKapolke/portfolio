@@ -1,14 +1,14 @@
-<form action="" method="post">
-    <input type="text" placeholder="Your name">
-    <input type="email" placeholder="Your email">
-    <textarea rows="10" placeholder="Your message"></textarea>
+<form (submit)="sendMail()" ngNativeValidate #contactForm>
+    <input type="text" name="name" placeholder="Your name" required #nameField>
+    <input type="email" name="email" placeholder="Your email" required #emailField>
+    <textarea name="message" rows="10" placeholder="Your message" required #messageField></textarea>
 
     <div class="policy-checkbox">
         <div class="checkbox-container">
-            <input type="checkbox" name="" id="">
+            <input type="checkbox" name="checkbox" required #policyCheckbox>
         </div>
         <span>I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</span>
     </div>
 
-    <button type="submit" class="btn btn-filled-B">Send message</button>
+    <button type="submit" class="btn btn-filled-B" #sendButton>Send message</button>
 </form>

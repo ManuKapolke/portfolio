@@ -11,6 +11,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectComponent } from './project/project.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

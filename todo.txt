@@ -1,4 +1,4 @@
-- Contact form
+- Contact form: border-color (error, done), refactor sendMail()
 - Footer 
 - Texte
 - Impressum 

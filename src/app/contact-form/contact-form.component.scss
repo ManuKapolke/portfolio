@@ -16,13 +16,15 @@ form {
         font-family: inherit;
         font-size: 16px;
         color: inherit;
+        outline: none;
 
         &::placeholder {
             color: inherit;
             opacity: 1;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
             border: 1px solid var(--mainColorB);
             box-shadow: 0 0 3px 1px var(--mainColorB), inset 0 0 3px 1px var(--mainColorB) !important;
         }
@@ -65,14 +67,14 @@ form {
                 border: 2px solid var(--mainColorB);
                 border-radius: 3px;
                 box-sizing: border-box;
-            }
 
-            input[type=checkbox]:focus {
-                background-color: #183771;
-            }
+                &:focus {
+                    background-color: #183771;
+                }
 
-            input[type=checkbox]:checked {
-                background: var(--checkmark) center no-repeat;
+                &:checked {
+                    background: var(--checkmark) center no-repeat;
+                }
             }
 
             &:hover {

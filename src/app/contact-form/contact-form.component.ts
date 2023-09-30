@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-form',
@@ -6,12 +7,90 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent {
-  @ViewChild('contactForm') contactForm!: ElementRef;
+  formData = {
+    name: '',
+    email: '',
+    message: '',
+    checkbox: false
+  };
+
+  @ViewChild('contactForm') contactForm!: NgForm;
   @ViewChild('nameField') nameField!: ElementRef;
   @ViewChild('emailField') emailField!: ElementRef;
   @ViewChild('messageField') messageField!: ElementRef;
   @ViewChild('policyCheckbox') policyCheckbox!: ElementRef;
   @ViewChild('sendButton') sendButton!: ElementRef;
+
+  onNameChange() {
+    // Check if the name field has any characters
+    this.applyGreenBorder(this.nameField, this.formData.name);
+  }
+
+  onMessageChange() {
+    // Check if the message field has any characters
+    this.applyGreenBorder(this.messageField, this.formData.message);
+  }
+
+  onEmailChange() {
+    if (this.formData.email) {
+      // Check if the email field has a valid email address
+      this.applyBorderColor(this.emailField, this.isValidEmail(this.formData.email));
+    } else {
+      this.removeRedBorder(this.emailField);
+      this.removeGreenBorder(this.emailField);
+    }
+  }
+
+  private applyGreenBorder(field: ElementRef, inputValue: string) {
+    if (inputValue) {
+      this.removeRedBorder(field);
+      this.addGreenBorder(field);
+    } else {
+      this.removeGreenBorder(field);
+    }
+  }
+
+  private applyBorderColor(field: ElementRef, isValid: boolean) {
+    if (isValid) {
+      this.removeRedBorder(field);
+      this.addGreenBorder(field);
+    } else {
+      this.removeGreenBorder(field);
+      this.addRedBorder(field);
+    }
+  }
+
+  private isValidEmail(email: string): boolean {
+    // Implement your email validation logic here
+    // For a basic check, you can use a regular expression
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailRegex.test(email);
+  }
+
+  private addGreenBorder(field: ElementRef) {
+    field.nativeElement.classList.add('green-border');
+  }
+
+  private addRedBorder(field: ElementRef) {
+    field.nativeElement.classList.add('red-border');
+  }
+
+  private removeGreenBorder(field: ElementRef) {
+    field.nativeElement.classList.remove('green-border');
+  }
+
+  private removeRedBorder(field: ElementRef) {
+    field.nativeElement.classList.remove('red-border');
+  }
+
+  inputIsValid(field: ElementRef): boolean {
+    if (field === this.policyCheckbox) {
+      return field.nativeElement.checked;
+    } else {
+      return field.nativeElement.classList.contains('green-border');
+    }
+  }
+
 
   async sendMail() {
     let nameField = this.nameField.nativeElement;

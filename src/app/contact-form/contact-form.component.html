@@ -1,14 +1,27 @@
-<form (submit)="sendMail()" ngNativeValidate #contactForm>
-    <input type="text" name="name" placeholder="Your name" required #nameField>
-    <input type="email" name="email" placeholder="Your email" required #emailField>
-    <textarea name="message" rows="10" placeholder="Your message" required #messageField></textarea>
+<form (submit)="sendMail()" ngNativeValidate #contactForm="ngForm">
+    <div class="input-container">
+        <input type="text" name="name" [(ngModel)]="formData.name" (input)="onNameChange()" placeholder="Your name"
+            required #nameField>
+        <span>Your name is required</span>
+    </div>
+
+    <div class="input-container">
+        <input type="email" name="email" [(ngModel)]="formData.email" (input)="onEmailChange()" placeholder="Your email"
+            required #emailField>
+    </div>
+
+    <div class="input-container">
+        <textarea name="message" [(ngModel)]="formData.message" (input)="onMessageChange()" rows="10"
+            placeholder="Your message" required #messageField></textarea>
+    </div>
 
     <div class="policy-checkbox">
         <div class="checkbox-container">
-            <input type="checkbox" name="checkbox" required #policyCheckbox>
+            <input type="checkbox" name="checkbox" [(ngModel)]="formData.checkbox" required #policyCheckbox>
         </div>
         <span>I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</span>
     </div>
 
-    <button type="submit" class="btn btn-filled-B" #sendButton>Send message</button>
+    <button type="submit" class="btn btn-filled-B" [class.btn-disabled]="!contactForm.form.valid"
+        [disabled]="!contactForm.form.valid" #sendButton>Send message</button>
 </form>

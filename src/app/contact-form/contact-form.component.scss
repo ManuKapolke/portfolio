@@ -10,7 +10,7 @@ form {
         background-color: var(--bgColor);
         border: 1px solid var(--mainColorA);
         border: 1px solid var(--mainColorA);
-        box-shadow: 0 0 3px 1px var(--mainColorA), inset 0 0 3px 1px var(--mainColorA) !important;
+        box-shadow: 0 0 3px 1px var(--mainColorA), inset 0 0 3px 1px var(--mainColorA);
         border-radius: 10px;
         padding: 15px 25px;
         font-family: inherit;
@@ -26,7 +26,7 @@ form {
         &:hover,
         &:focus {
             border: 1px solid var(--mainColorB);
-            box-shadow: 0 0 3px 1px var(--mainColorB), inset 0 0 3px 1px var(--mainColorB) !important;
+            box-shadow: 0 0 3px 1px var(--mainColorB), inset 0 0 3px 1px var(--mainColorB);
         }
     }
 
@@ -99,4 +99,14 @@ form {
         }
 
     }
+}
+
+.red-border {
+    border: 1px solid var(--errorColor) !important;
+    box-shadow: 0 0 3px 1px var(--errorColor), inset 0 0 3px 1px var(--errorColor) !important;
+}
+
+.green-border {
+    border: 1px solid var(--doneColor) !important;
+    box-shadow: 0 0 3px 1px var(--doneColor), inset 0 0 3px 1px var(--doneColor) !important;
 }

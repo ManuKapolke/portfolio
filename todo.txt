@@ -8,4 +8,5 @@
 - Xing
 - LinkedIn
 - Animationen
+- Logo, Favicon
 - Mobile

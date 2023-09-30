@@ -183,10 +183,20 @@ Buttons
 .btn-unfilled {
     background-color: rgba(var(--bgColor), 0.3);
     border: 1px solid var(--mainColorB);
-    box-shadow: 0 0 3px 1px var(--mainColorB), inset 0 0 3px 1px var(--mainColorB) !important;
+    box-shadow: 0 0 3px 1px var(--mainColorB), inset 0 0 3px 1px var(--mainColorB);
 
     &:hover {
         background-color: var(--mainColorB);
+    }
+}
+
+.btn-disabled {
+    background-color: #B6B6B6 !important;
+    cursor: not-allowed !important;
+
+    &:hover {
+        background-color: #B6B6B6 !important;
+        transform: unset !important;
     }
 }
 

@@ -1,5 +1,6 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-contact-form',
@@ -7,128 +8,54 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent {
-  formData = {
-    name: '',
-    email: '',
-    message: '',
-    checkbox: false
-  };
+  contactForm!: FormGroup;
+  messageIsSending: boolean = false;
 
-  @ViewChild('contactForm') contactForm!: NgForm;
-  @ViewChild('nameField') nameField!: ElementRef;
-  @ViewChild('emailField') emailField!: ElementRef;
-  @ViewChild('messageField') messageField!: ElementRef;
-  @ViewChild('policyCheckbox') policyCheckbox!: ElementRef;
-  @ViewChild('sendButton') sendButton!: ElementRef;
+  constructor(private formBuilder: FormBuilder) { }
 
-  onNameChange() {
-    // Check if the name field has any characters
-    this.applyGreenBorder(this.nameField, this.formData.name);
+  ngOnInit() {
+    this.contactForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(2)]],
+      checkbox: [false, Validators.requiredTrue]
+    });
   }
-
-  onMessageChange() {
-    // Check if the message field has any characters
-    this.applyGreenBorder(this.messageField, this.formData.message);
-  }
-
-  onEmailChange() {
-    if (this.formData.email) {
-      // Check if the email field has a valid email address
-      this.applyBorderColor(this.emailField, this.isValidEmail(this.formData.email));
-    } else {
-      this.removeRedBorder(this.emailField);
-      this.removeGreenBorder(this.emailField);
-    }
-  }
-
-  private applyGreenBorder(field: ElementRef, inputValue: string) {
-    if (inputValue) {
-      this.removeRedBorder(field);
-      this.addGreenBorder(field);
-    } else {
-      this.removeGreenBorder(field);
-    }
-  }
-
-  private applyBorderColor(field: ElementRef, isValid: boolean) {
-    if (isValid) {
-      this.removeRedBorder(field);
-      this.addGreenBorder(field);
-    } else {
-      this.removeGreenBorder(field);
-      this.addRedBorder(field);
-    }
-  }
-
-  private isValidEmail(email: string): boolean {
-    // Implement your email validation logic here
-    // For a basic check, you can use a regular expression
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailRegex.test(email);
-  }
-
-  private addGreenBorder(field: ElementRef) {
-    field.nativeElement.classList.add('green-border');
-  }
-
-  private addRedBorder(field: ElementRef) {
-    field.nativeElement.classList.add('red-border');
-  }
-
-  private removeGreenBorder(field: ElementRef) {
-    field.nativeElement.classList.remove('green-border');
-  }
-
-  private removeRedBorder(field: ElementRef) {
-    field.nativeElement.classList.remove('red-border');
-  }
-
-  inputIsValid(field: ElementRef): boolean {
-    if (field === this.policyCheckbox) {
-      return field.nativeElement.checked;
-    } else {
-      return field.nativeElement.classList.contains('green-border');
-    }
-  }
-
 
   async sendMail() {
-    let nameField = this.nameField.nativeElement;
-    let emailField = this.emailField.nativeElement;
-    let messageField = this.messageField.nativeElement;
-    let policyCheckbox = this.policyCheckbox.nativeElement;
-    let sendButton = this.sendButton.nativeElement;
-
-    nameField.disabled = true;
-    emailField.disabled = true;
-    messageField.disabled = true;
-    policyCheckbox.disabled = true;
-    sendButton.disabled = true;
+    this.contactForm.disable();
+    this.messageIsSending = true;
 
     // Animation anzeigen
     // todo...
 
     let formData = new FormData();
-    formData.append('name', nameField.value);
-    formData.append('email', emailField.value);
-    formData.append('message', messageField.value);
+    formData.append('name', this.contactForm.get('name')?.value);
+    formData.append('email', this.contactForm.get('email')?.value);
+    formData.append('message', this.contactForm.get('message')?.value);
 
-    // senden
-    await fetch('https://manu-kapolke.developerakademie.net/portfolio/send_mail.php',
-      {
+    try {
+      const response = await fetch('https://manu-kapolke.developerakademie.net/portfolio/send_mail.php', {
         method: 'POST',
         body: formData
+      });
+
+      if (response.ok) {
+        // Request was successful, handle response here
+        console.log('Mail sent successfully');
+      } else {
+        // Request failed, handle the error
+        console.error('Mail sending failed:', response.statusText);
       }
-    )
+    } catch (error) {
+      // Network error or other exceptions
+      console.error('An error occurred:', error);
+    }
 
     // Text anzeigen: Nachricht gesendet
-    console.log('Sent mail');
     // todo...
 
-    nameField.disabled = false;
-    emailField.disabled = false;
-    messageField.disabled = false;
-    policyCheckbox.disabled = false;
-    sendButton.disabled = false;
+    this.messageIsSending = false;
+    this.contactForm.enable();
   }
 }

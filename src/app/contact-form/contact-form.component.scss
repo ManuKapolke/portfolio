@@ -4,46 +4,62 @@ form {
     align-items: center;
     gap: 12px;
 
-    input:not([type='checkbox']),
-    textarea {
+    .input-container {
         width: 100%;
-        background-color: var(--bgColor);
-        border: 1px solid var(--mainColorA);
-        border: 1px solid var(--mainColorA);
-        box-shadow: 0 0 3px 1px var(--mainColorA), inset 0 0 3px 1px var(--mainColorA);
-        border-radius: 10px;
-        padding: 15px 25px;
-        font-family: inherit;
-        font-size: 16px;
-        color: inherit;
-        outline: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        // margin-bottom: 20px;
 
-        &::placeholder {
+        input:not([type='checkbox']),
+        textarea {
+            width: 100%;
+            background-color: var(--bgColor);
+            border: 1px solid var(--mainColorA);
+            border: 1px solid var(--mainColorA);
+            box-shadow: 0 0 3px 1px var(--mainColorA), inset 0 0 3px 1px var(--mainColorA);
+            border-radius: 10px;
+            padding: 15px 25px;
+            font-family: inherit;
+            font-size: 16px;
             color: inherit;
-            opacity: 1;
+            outline: none;
+
+            &::placeholder {
+                color: inherit;
+                opacity: 1;
+            }
+
+            &:hover,
+            &:focus {
+                border: 1px solid var(--mainColorB);
+                box-shadow: 0 0 3px 1px var(--mainColorB), inset 0 0 3px 1px var(--mainColorB);
+            }
         }
 
-        &:hover,
-        &:focus {
-            border: 1px solid var(--mainColorB);
-            box-shadow: 0 0 3px 1px var(--mainColorB), inset 0 0 3px 1px var(--mainColorB);
+        // input:not([type='checkbox']) {
+        //     margin-bottom: 20px;
+        // }
+
+        textarea {
+            margin-bottom: 4px;
+            transition-property: border, box-shadow;
+
+            &::-webkit-resizer {
+                background: var(--textareaResizer) center no-repeat;
+            }
+        }
+
+        .error-msg {
+            color: var(--errorColor);
+            font-size: 14px;
         }
     }
 
-    input:not([type='checkbox']) {
-        margin-bottom: 20px;
-    }
 
-    textarea {
-        margin-bottom: 4px;
-        transition-property: border, box-shadow;
-
-        &::-webkit-resizer {
-            background: var(--textareaResizer) center no-repeat;
-        }
-    }
 
     .policy-checkbox {
+        align-self: flex-start;
         font-size: 14px;
         display: flex;
         flex-wrap: nowrap;
@@ -101,12 +117,12 @@ form {
     }
 }
 
-.red-border {
-    border: 1px solid var(--errorColor) !important;
-    box-shadow: 0 0 3px 1px var(--errorColor), inset 0 0 3px 1px var(--errorColor) !important;
-}
-
-.green-border {
+.ng-valid:not(form, input[type='checkbox']) {
     border: 1px solid var(--doneColor) !important;
     box-shadow: 0 0 3px 1px var(--doneColor), inset 0 0 3px 1px var(--doneColor) !important;
+}
+
+.ng-invalid:not(form, input[type='checkbox']):not(:placeholder-shown) {
+    border: 1px solid var(--errorColor) !important;
+    box-shadow: 0 0 3px 1px var(--errorColor), inset 0 0 3px 1px var(--errorColor) !important;
 }

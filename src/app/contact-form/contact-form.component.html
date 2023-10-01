@@ -1,27 +1,35 @@
-<form (submit)="sendMail()" ngNativeValidate #contactForm="ngForm">
+<form (ngSubmit)="sendMail()" [formGroup]="contactForm">
     <div class="input-container">
-        <input type="text" name="name" [(ngModel)]="formData.name" (input)="onNameChange()" placeholder="Your name"
-            required #nameField>
-        <span>Your name is required</span>
+        <input type="text" formControlName="name" placeholder="Your name" #nameField>
+        <span class="error-msg"
+            [class.hidden]="contactForm.get('name')?.value.length == 0 || contactForm.get('name')?.valid || contactForm.disabled">
+            Please enter a name with at least two characters.
+        </span>
     </div>
 
     <div class="input-container">
-        <input type="email" name="email" [(ngModel)]="formData.email" (input)="onEmailChange()" placeholder="Your email"
-            required #emailField>
+        <input type="email" formControlName="email" placeholder="Your email" #emailField>
+        <span class="error-msg"
+            [class.hidden]="contactForm.get('email')?.value.length == 0 || !contactForm.get('email')?.hasError('email')">
+            Invalid email format.
+        </span>
     </div>
 
     <div class="input-container">
-        <textarea name="message" [(ngModel)]="formData.message" (input)="onMessageChange()" rows="10"
-            placeholder="Your message" required #messageField></textarea>
+        <textarea formControlName="message" rows="10" placeholder="Your message" #messageField></textarea>
+        <span class="error-msg"
+            [class.hidden]="contactForm.get('message')?.value.length == 0 || contactForm.get('message')?.valid || contactForm.disabled">
+            Please write a message with at least two characters.
+        </span>
     </div>
 
     <div class="policy-checkbox">
         <div class="checkbox-container">
-            <input type="checkbox" name="checkbox" [(ngModel)]="formData.checkbox" required #policyCheckbox>
+            <input type="checkbox" formControlName="checkbox" #policyCheckbox>
         </div>
         <span>I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</span>
     </div>
 
-    <button type="submit" class="btn btn-filled-B" [class.btn-disabled]="!contactForm.form.valid"
-        [disabled]="!contactForm.form.valid" #sendButton>Send message</button>
+    <button type="submit" class="btn btn-filled-B" [class.btn-disabled]="!contactForm.valid || messageIsSending"
+        [disabled]="!contactForm.valid" #sendButton>Send message</button>
 </form>

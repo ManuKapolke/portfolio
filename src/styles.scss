@@ -192,7 +192,7 @@ Buttons
 
 .btn-disabled {
     background-color: #B6B6B6 !important;
-    cursor: not-allowed !important;
+    cursor: unset !important;
 
     &:hover {
         background-color: #B6B6B6 !important;
@@ -240,4 +240,11 @@ a {
             }
         }
     }
+}
+
+/*--------------------------------------------------
+Show/Hide
+---------------------------------------------------*/
+.hidden {
+    visibility: hidden !important;
 }

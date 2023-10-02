@@ -14,6 +14,7 @@ form {
         input:not([type='checkbox']),
         textarea {
             width: 100%;
+            min-height: 60px;
             background-color: var(--bgColor);
             border: 1px solid var(--mainColorA);
             border: 1px solid var(--mainColorA);
@@ -120,9 +121,15 @@ form {
 .ng-valid:not(form, input[type='checkbox']) {
     border: 1px solid var(--doneColor) !important;
     box-shadow: 0 0 3px 1px var(--doneColor), inset 0 0 3px 1px var(--doneColor) !important;
+    background-image: url('/assets/icons/done.png');
+    background-position: 95% 16px;
+    background-repeat: no-repeat;
 }
 
 .ng-invalid:not(form, input[type='checkbox']):not(:placeholder-shown) {
     border: 1px solid var(--errorColor) !important;
     box-shadow: 0 0 3px 1px var(--errorColor), inset 0 0 3px 1px var(--errorColor) !important;
+    background-image: url('/assets/icons/error.png');
+    background-position: 95% 16px;
+    background-repeat: no-repeat;
 }

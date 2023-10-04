@@ -1,12 +1,12 @@
-- Contact form: sending animation
 - Footer 
 - Texte
+- Animationen
 - Impressum 
-- Datenschutz 
-- Photos
-- EN/DE
+- Datenschutz
+- Logo, Favicon
+- Project images
 - Xing
 - LinkedIn
-- Animationen
-- Logo, Favicon
-- Mobile
+- Mobile 
+- Photos
+- EN/DE

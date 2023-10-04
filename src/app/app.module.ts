@@ -13,6 +13,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
+import { ContactIconsComponent } from './contact-icons/contact-icons.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     PortfolioComponent,
     ProjectComponent,
     ContactComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    FooterComponent,
+    ContactIconsComponent
   ],
   imports: [
     BrowserModule,

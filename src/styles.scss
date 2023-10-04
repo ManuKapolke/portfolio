@@ -15,11 +15,22 @@ Variables
     --checkmark: url('assets/icons/v2_checkmark.png');
     --textareaResizer: url('assets/icons/v2_textarea-resizer.png');
     --headerHeight: 110px;
+    --footerHeight: 280px;
     --paddingLR: 10vw;
     --gapLineText: 40px;
     --transitionTime: 125ms;
 }
 
+/*--------------------------------------------------
+Mixins
+---------------------------------------------------*/
+@mixin logo($logo: var(--logoA), $height: 60px) {
+    height: $height;
+    width: calc(1.5 * $height);
+    background-image: $logo;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
 /*--------------------------------------------------
 Fonts
@@ -125,6 +136,31 @@ h4 {
     font-size: 24px;
     font-weight: 400;
     color: var(--mainColorB);
+}
+
+/*--------------------------------------------------
+Logo
+---------------------------------------------------*/
+.logo-header {
+    @include logo();
+    cursor: pointer;
+
+    &:hover {
+        background-image: var(--logoB);
+    }
+}
+
+.logo-sending {
+    @include logo(var(--logoB), 140px);
+}
+
+.logo-footer {
+    @include logo($height: 150px);
+    cursor: pointer;
+
+    &:hover {
+        background-image: var(--logoB);
+    }
 }
 
 /*--------------------------------------------------

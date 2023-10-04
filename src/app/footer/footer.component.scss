@@ -1,0 +1,23 @@
+#footer {
+    height: var(--footerHeight);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--paddingLR);
+    background-color: var(--bgColor);
+    border-top: 4px solid var(--mainColorB);
+    box-shadow: 0 0 3px 1px var(--mainColorB);
+    position: relative;
+    z-index: 10;
+
+    .logo-and-legal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .copyright {
+        font-size: 24px;
+    }
+}

@@ -1,6 +1,7 @@
 #contact {
     flex-direction: column;
     gap: 35px;
+    padding-bottom: calc(2 * var(--paddingLR));
 
     .h-line-contact {
         position: absolute;
@@ -29,9 +30,28 @@
 
     .bg-shape {
         position: absolute;
-        bottom: -380px;
+        bottom: -180px;
         left: -400px;
         transform: rotate(250deg);
         z-index: 2;
+    }
+
+    .scroll-up {
+        position: absolute;
+        bottom: var(--paddingLR);
+        right: var(--paddingLR);
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover svg path {
+            fill: var(--mainColorB);
+        }
+
+        &:hover svg rect {
+            stroke: var(--mainColorB);
+        }
     }
 }

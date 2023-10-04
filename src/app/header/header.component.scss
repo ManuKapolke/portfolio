@@ -1,4 +1,4 @@
-.header {
+#header {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,19 +11,6 @@
     background-color: var(--bgColor);
     box-shadow: 0 0 3px 1px var(--bgColor);
     z-index: 10;
-
-    .logo {
-        height: 60px;
-        width: 90px;
-        cursor: pointer;
-        background-image: var(--logoA);
-        background-size: contain;
-        background-repeat: no-repeat;
-
-        &:hover {
-            background-image: var(--logoB);
-        }
-    }
 
     nav {
         display: flex;

@@ -9,7 +9,7 @@ form {
         display: flex;
         flex-direction: column;
         gap: 8px;
-        // margin-bottom: 20px;
+        position: relative;
 
         input:not([type='checkbox']),
         textarea {
@@ -38,10 +38,6 @@ form {
             }
         }
 
-        // input:not([type='checkbox']) {
-        //     margin-bottom: 20px;
-        // }
-
         textarea {
             margin-bottom: 4px;
             transition-property: border, box-shadow;
@@ -55,9 +51,14 @@ form {
             color: var(--errorColor);
             font-size: 14px;
         }
+
+        .error-icon,
+        .done-icon {
+            position: absolute;
+            top: 17px;
+            right: 20px;
+        }
     }
-
-
 
     .policy-checkbox {
         align-self: flex-start;
@@ -114,22 +115,55 @@ form {
                 }
             }
         }
-
     }
 }
 
 .ng-valid:not(form, input[type='checkbox']) {
     border: 1px solid var(--doneColor) !important;
     box-shadow: 0 0 3px 1px var(--doneColor), inset 0 0 3px 1px var(--doneColor) !important;
-    background-image: url('/assets/icons/done.png');
-    background-position: 95% 16px;
-    background-repeat: no-repeat;
 }
 
 .ng-invalid:not(form, input[type='checkbox']):not(:placeholder-shown) {
     border: 1px solid var(--errorColor) !important;
     box-shadow: 0 0 3px 1px var(--errorColor), inset 0 0 3px 1px var(--errorColor) !important;
-    background-image: url('/assets/icons/error.png');
-    background-position: 95% 16px;
-    background-repeat: no-repeat;
+}
+
+.sending-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bgColorTransparent);
+    z-index: 5;
+
+    .logo {
+        width: 200px;
+        height: 200px;
+        background-image: var(--logoB);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .message-sent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+
+        .message-sent-text {
+            color: white;
+        }
+
+        span {
+            cursor: pointer;
+        }
+    }
 }

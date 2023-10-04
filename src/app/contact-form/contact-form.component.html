@@ -1,35 +1,48 @@
-<form (ngSubmit)="sendMail()" [formGroup]="contactForm">
+<form (ngSubmit)="sendMail()" [formGroup]="contactForm" autocomplete="on">
     <div class="input-container">
-        <input type="text" formControlName="name" placeholder="Your name" #nameField>
-        <span class="error-msg"
-            [class.hidden]="contactForm.get('name')?.value.length == 0 || contactForm.get('name')?.valid || contactForm.disabled">
+        <input type="text" formControlName="name" placeholder="Your name">
+        <img class="error-icon" *ngIf="invalidInput('name')" src="/assets/icons/error.png">
+        <img class="done-icon" *ngIf="validInput('name')" src="/assets/icons/done.png">
+        <span class="error-msg" [class.hidden]="!invalidInput('name')">
             Please enter a name with at least two characters.
         </span>
     </div>
 
     <div class="input-container">
-        <input type="email" formControlName="email" placeholder="Your email" #emailField>
-        <span class="error-msg"
-            [class.hidden]="contactForm.get('email')?.value.length == 0 || !contactForm.get('email')?.hasError('email')">
+        <input type="email" formControlName="email" placeholder="Your email">
+        <img class="error-icon" *ngIf="invalidInput('email')" src="/assets/icons/error.png">
+        <img class="done-icon" *ngIf="validInput('email')" src="/assets/icons/done.png">
+        <span class="error-msg" [class.hidden]="!invalidInput('email')">
             Invalid email format.
         </span>
     </div>
 
     <div class="input-container">
-        <textarea formControlName="message" rows="10" placeholder="Your message" #messageField></textarea>
-        <span class="error-msg"
-            [class.hidden]="contactForm.get('message')?.value.length == 0 || contactForm.get('message')?.valid || contactForm.disabled">
+        <textarea formControlName="message" rows="10" placeholder="Your message"></textarea>
+        <img class="error-icon" *ngIf="invalidInput('message')" src="/assets/icons/error.png">
+        <img class="done-icon" *ngIf="validInput('message')" src="/assets/icons/done.png">
+        <span class="error-msg" [class.hidden]="!invalidInput('message')">
             Please write a message with at least two characters.
         </span>
     </div>
 
     <div class="policy-checkbox">
         <div class="checkbox-container">
-            <input type="checkbox" formControlName="checkbox" #policyCheckbox>
+            <input type="checkbox" formControlName="checkbox">
         </div>
         <span>I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</span>
     </div>
 
-    <button type="submit" class="btn btn-filled-B" [class.btn-disabled]="!contactForm.valid || messageIsSending"
-        [disabled]="!contactForm.valid" #sendButton>Send message</button>
+    <button type="submit" class="btn btn-filled-B" [class.btn-disabled]="!contactForm.valid"
+        [disabled]="!contactForm.valid" #sendButton>
+        Send message
+    </button>
+
+    <div class="sending-screen" *ngIf="sending" (click)="closeSendingScreen()">
+        <div class="logo" [class.heartbeat]="!messageIsSent" [class.fade-in]="messageIsSent"></div>
+        <div class="message-sent" [class.hidden]="!messageIsSent" [class.fade-in-from-below]="messageIsSent">
+            <h3 class="message-sent-text">Your message has been sent, thank you!</h3>
+            <span>(Click to continue...)</span>
+        </div>
+    </div>
 </form>

@@ -5,6 +5,7 @@ Variables
 ---------------------------------------------------*/
 :root {
     --bgColor: #141D2F;
+    --bgColorTransparent: #141d2fcc;
     --mainColorA: #4B47FF;
     --mainColorB: #00BEE8;
     --errorColor: #E61C40;
@@ -247,4 +248,81 @@ Show/Hide
 ---------------------------------------------------*/
 .hidden {
     visibility: hidden !important;
+}
+
+/*--------------------------------------------------
+Animations
+---------------------------------------------------*/
+.fade-in {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// .fade-out {
+//     animation: fadeIn 1s ease;
+// }
+
+// @keyframes fadeOut {
+//     from {
+//         opacity: 1;
+//     }
+
+//     to {
+//         opacity: 0;
+//     }
+// }
+
+.fade-in-from-below {
+    animation: fadeInFromBelow 1s ease;
+}
+
+@keyframes fadeInFromBelow {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heartbeat {
+    animation: heartbeat 1200ms linear infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    70% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }

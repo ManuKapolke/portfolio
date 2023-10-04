@@ -1,4 +1,4 @@
-- Contact form: refactor sendMail()
+- Contact form: sending animation
 - Footer 
 - Texte
 - Impressum 

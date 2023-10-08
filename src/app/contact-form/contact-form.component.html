@@ -1,5 +1,5 @@
 <form (ngSubmit)="sendMail()" [formGroup]="contactForm" autocomplete="on">
-    <div class="input-container">
+    <div class="input-container" data-aos="fade-left" data-aos-duration="1000">
         <input type="text" formControlName="name" placeholder="Your name">
         <img class="error-icon" *ngIf="invalidInput('name')" src="/assets/icons/error.png">
         <img class="done-icon" *ngIf="validInput('name')" src="/assets/icons/done.png">
@@ -8,7 +8,8 @@
         </span>
     </div>
 
-    <div class="input-container">
+    <div class="input-container" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000"
+        data-aos-offset="-200">
         <input type="email" formControlName="email" placeholder="Your email">
         <img class="error-icon" *ngIf="invalidInput('email')" src="/assets/icons/error.png">
         <img class="done-icon" *ngIf="validInput('email')" src="/assets/icons/done.png">
@@ -17,7 +18,8 @@
         </span>
     </div>
 
-    <div class="input-container">
+    <div class="input-container" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"
+        data-aos-offset="-300">
         <textarea formControlName="message" rows="10" placeholder="Your message"></textarea>
         <img class="error-icon" *ngIf="invalidInput('message')" src="/assets/icons/error.png">
         <img class="done-icon" *ngIf="validInput('message')" src="/assets/icons/done.png">
@@ -26,7 +28,8 @@
         </span>
     </div>
 
-    <div class="policy-checkbox">
+    <div class="policy-checkbox" data-aos="fade-left" data-aos-delay="750" data-aos-duration="1000"
+        data-aos-offset="-400">
         <div class="checkbox-container">
             <input type="checkbox" formControlName="checkbox">
         </div>
@@ -34,7 +37,8 @@
     </div>
 
     <button type="submit" class="btn btn-filled-B" [class.btn-disabled]="!contactForm.valid"
-        [disabled]="!contactForm.valid" #sendButton>
+        [disabled]="!contactForm.valid" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000"
+        data-aos-offset="-400">
         Send message
     </button>
 

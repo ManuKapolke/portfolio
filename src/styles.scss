@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'aos/dist/aos.css';
 
 /*--------------------------------------------------
 Variables
@@ -287,56 +288,19 @@ Show/Hide
 }
 
 /*--------------------------------------------------
-Animations
+Animation Classes
 ---------------------------------------------------*/
-.fade-in {
-    animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-// .fade-out {
-//     animation: fadeIn 1s ease;
-// }
-
-// @keyframes fadeOut {
-//     from {
-//         opacity: 1;
-//     }
-
-//     to {
-//         opacity: 0;
-//     }
-// }
-
-.fade-in-from-below {
-    animation: fadeInFromBelow 1s ease;
-}
-
-@keyframes fadeInFromBelow {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .heartbeat {
     animation: heartbeat 1200ms linear infinite;
 }
 
+.glow {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/*--------------------------------------------------
+Animation Keyframes
+---------------------------------------------------*/
 @keyframes heartbeat {
     0% {
         transform: scale(1);
@@ -360,5 +324,23 @@ Animations
 
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes glow {
+    $factor: 5px;
+
+    from {
+        text-shadow:
+            0 0 $factor var(--mainColorA),
+            0 0 calc(2 * $factor) var(--mainColorA),
+            0 0 calc(3 * $factor) var(--mainColorB);
+    }
+
+    to {
+        text-shadow:
+            0 0 calc(2 * $factor) var(--mainColorA),
+            0 0 calc(3 * $factor) var(--mainColorB),
+            0 0 calc(4 * $factor) white;
     }
 }

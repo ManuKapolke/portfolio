@@ -24,4 +24,8 @@ export class SkillsComponent {
   ];
 
   constructor(public layoutService: LayoutService) { }
+
+  fadeDirection(index: number): string {
+    return index % 2 === 0 ? 'left' : 'right';
+  }
 }

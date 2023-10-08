@@ -1,12 +1,13 @@
 <section id="skills">
     <div class="skills-icons-container">
-        <div *ngFor="let skill of skills; let i = index" class="skill-icon">
+        <div *ngFor="let skill of skills; let i = index" class="skill-icon" data-aos="flip-left"
+            data-aos-duration="1500">
             <img src="assets/icons/{{ skill.icon }}" alt="angular-icon">
             <span>{{ skill.name }}</span>
         </div>
     </div>
 
-    <div class="skills-text-container">
+    <div class="skills-text-container" data-aos="fade-left" data-aos-duration="1500">
         <h2>
             My Skills
             <div class="h-line-A h-line-skills"></div>

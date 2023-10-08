@@ -1,6 +1,7 @@
 <div class="project-container">
     <a class="img-container" *ngIf="!reversed" href="{{ project.url }}">
-        <img src="{{ project.img }}" alt="screen showing {{ project.name }} project">
+        <img src="{{ project.img }}" alt="screen showing {{ project.name }} project" data-aos="flip-up"
+            data-aos-duration="1500">
     </a>
 
     <div class="text-container" [ngStyle]="{'text-align': reversed ? 'right' : 'left'}">
@@ -8,12 +9,19 @@
         <h4>{{ project.techStack }}</h4>
         <p>{{ project.description }}</p>
         <div class="project-buttons" [ngStyle]="{'justify-content': reversed ? 'flex-end' : 'flex-start'}">
-            <a class="btn btn-filled-A" href="{{ project.url }}" target="_blank">Live test</a>
-            <a class="btn btn-unfilled" href="{{ project.githubUrl }}" target="_blank">GitHub</a>
+            <a class="btn btn-filled-A" href="{{ project.url }}" target="_blank" data-aos="flip-up" data-aos-delay="250"
+                data-aos-duration="1500" data-aos-offset="-200">
+                Live test
+            </a>
+            <a class="btn btn-unfilled" href="{{ project.githubUrl }}" target="_blank" data-aos="flip-left"
+                data-aos-delay="500" data-aos-duration="1500" data-aos-offset="-200">
+                GitHub
+            </a>
         </div>
     </div>
 
     <a class="img-container" *ngIf="reversed" href="{{ project.url }}">
-        <img src="{{ project.img }}" alt="screen showing {{ project.name }} project">
+        <img src="{{ project.img }}" alt="screen showing {{ project.name }} project" data-aos="flip-up"
+            data-aos-duration="1500">
     </a>
 </div>

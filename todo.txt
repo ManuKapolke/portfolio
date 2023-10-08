@@ -1,4 +1,3 @@
-- Footer 
 - Texte
 - Animationen
 - Impressum 

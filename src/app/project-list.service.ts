@@ -17,7 +17,7 @@ export class ProjectListService {
     {
       name: 'El Pollo Loco',
       techStack: 'JavaScript | HTML | CSS',
-      description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+      description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and salsa to fight against a psycho chicken.',
       url: 'https://manu-kapolke.developerakademie.net/el_pollo_loco',
       githubUrl: 'https://github.com/ManuKapolke/el_pollo_loco',
       img: 'assets/img/projects/laptop_el-pollo-loco.png'
@@ -33,7 +33,7 @@ export class ProjectListService {
     {
       name: 'Pokédex',
       techStack: 'JavaScript | HTML | CSS | API',
-      description: 'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
+      description: 'Based on the PokéAPI, a simple library that provides and catalogues Pokémon information.',
       url: 'https://manu-kapolke.developerakademie.net/pokedex',
       githubUrl: 'https://github.com/ManuKapolke/pokedex',
       img: 'assets/img/projects/laptop_pokedex.png'

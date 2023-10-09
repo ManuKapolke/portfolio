@@ -7,7 +7,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 60px 100px;
-        width: 60%;
+        width: 45vw;
         z-index: 3;
 
         .skill-icon {
@@ -29,7 +29,7 @@
     }
 
     .skills-text-container {
-        width: 470px;
+        width: 30vw;
         display: flex;
         flex-direction: column;
         align-items: flex-end;

@@ -21,7 +21,10 @@
     .bg-shape {
         position: absolute;
         top: -200px;
-        right: -400px;
+        right: 0;
+        width: calc(741px - 400px);
+        height: 737px;
+        overflow: hidden;
         z-index: 2;
     }
 

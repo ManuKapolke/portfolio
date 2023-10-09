@@ -33,9 +33,15 @@
 
     .bg-shape-B {
         position: absolute;
-        bottom: -200px;
-        right: -500px;
-        transform: rotate(75deg);
+        bottom: -300px;
+        right: 0;
+        width: calc(899px - 500px);
+        height: 977px;
+        overflow: hidden;
         z-index: 2;
+
+        img {
+            transform: rotate(75deg);
+        }
     }
 }

@@ -260,8 +260,33 @@ a {
     cursor: pointer;
 }
 
-.text-link:hover {
-    color: var(--mainColorB);
+.text-link {
+    position: relative;
+
+    .text-link-mirrored {
+        font-style: italic;
+        cursor: inherit;
+        transform: rotateX(210deg) translate(5px);
+        mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(20%, transparent), to(rgba(0, 0, 0, .66)));
+        -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(20%, transparent), to(rgba(0, 0, 0, .66)));
+        color: #ffffffa8;
+        position: absolute;
+        left: -5px;
+        top: 36px;
+        opacity: 0;
+        height: 0;
+        transition: opacity calc(2 * var(--transitionTime)) ease-in-out;
+    }
+
+    &:hover {
+        color: var(--mainColorB);
+
+        .text-link-mirrored {
+            height: 32px;
+            opacity: 1;
+            transition: opacity calc(2 * var(--transitionTime)) ease-in-out;
+        }
+    }
 }
 
 .svg-link {

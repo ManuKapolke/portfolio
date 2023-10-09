@@ -1,5 +1,4 @@
 - Texte
-- Animationen
 - Impressum 
 - Datenschutz
 - Logo, Favicon

@@ -7,6 +7,7 @@ Variables
 :root {
     --bgColor: #141D2F;
     --bgColorTransparent: #141d2fcc;
+    --bgColorInput: #162035;
     --mainColorA: #4B47FF;
     --mainColorB: #00BEE8;
     --errorColor: #E61C40;
@@ -276,6 +277,7 @@ a {
         opacity: 0;
         height: 0;
         transition: opacity calc(2 * var(--transitionTime)) ease-in-out;
+        transition: height calc(4 * var(--transitionTime)) ease-in-out;
     }
 
     &:hover {
@@ -285,6 +287,7 @@ a {
             height: 32px;
             opacity: 1;
             transition: opacity calc(2 * var(--transitionTime)) ease-in-out;
+            transition: height calc(4 * var(--transitionTime)) ease-in-out;
         }
     }
 }

@@ -292,6 +292,14 @@ a {
     }
 }
 
+.inner-text-link {
+    color: var(--mainColorB);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .svg-link {
     svg {
         scale: 0.8;

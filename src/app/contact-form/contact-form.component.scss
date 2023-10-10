@@ -107,13 +107,13 @@ form {
         span {
             line-height: 24px;
 
-            a {
-                color: var(--mainColorA);
+            // a {
+            //     color: var(--mainColorA);
 
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
+            //     &:hover {
+            //         text-decoration: underline;
+            //     }
+            // }
         }
     }
 }

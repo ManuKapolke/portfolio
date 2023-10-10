@@ -1,10 +1,9 @@
-- Texte
+- Mobile 
 - Impressum 
 - Datenschutz
-- Logo, Favicon
-- Project images
+- EN/DE
+- Photos
+- Hosting
 - Xing
 - LinkedIn
-- Mobile 
-- Photos
-- EN/DE
+- Logo?

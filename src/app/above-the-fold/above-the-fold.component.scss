@@ -10,17 +10,19 @@
         justify-content: center;
 
         .photo {
-            width: 360px;
+            width: clamp(264px, 25vw, 360px);
             z-index: 1;
         }
 
         .photo-background-shape {
             position: absolute;
             top: -30px;
-            left: calc(-0.5 * (872px - 360px));
+            left: calc(-0.5 * (872px - clamp(264px, 25vw, 360px)));
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
+            overflow-y: hidden;
+            height: 720px;
         }
     }
 
@@ -52,7 +54,8 @@
         .main-title-left {
             writing-mode: vertical-lr;
             transform: rotate(-180deg);
-            font-size: 62px;
+            // font-size: 62px;
+            font-size: 3.875em;
             letter-spacing: 3px;
             white-space: nowrap;
             margin-bottom: 3px;
@@ -62,10 +65,12 @@
             white-space: nowrap;
 
             .sub-title {
-                font-size: 60px;
+                // font-size: 59.6px;
+                font-size: 3.725em;
                 color: var(--mainColorA);
                 line-height: 100%;
-                letter-spacing: 5px;
+                // letter-spacing: 5px;
+                letter-spacing: 0.085em;
             }
         }
     }
@@ -86,10 +91,9 @@
             border-bottom-right-radius: 1px;
         }
 
-
-
         .email {
             font-size: 24px;
+            // font-size: 1.5em;
         }
     }
 
@@ -109,6 +113,7 @@
 
         span {
             font-size: 24px;
+            // font-size: 1.5em;
             writing-mode: vertical-lr;
         }
 
@@ -135,5 +140,43 @@
 
     100% {
         transform: translateY(0);
+    }
+}
+
+/*--------------------------------------------------
+Media Queries
+---------------------------------------------------*/
+@media (width < 1280px) {
+    #above-the-fold {
+        .contact-bar .email {
+            font-size: 20px;
+
+            .text-link-mirrored {
+                // left: -5px;
+                top: 28px;
+            }
+
+            // &:hover .text-link-mirrored {
+            //     height: 32px;
+            // }
+        }
+
+        .scroll-down {
+            // bottom: 40px;
+            // gap: 8px;
+
+            span {
+                font-size: 20px;
+            }
+
+            .arrow-down {
+                // height: 30px;
+
+                svg {
+                    // scale: 1.1;
+                    margin-left: 4px;
+                }
+            }
+        }
     }
 }

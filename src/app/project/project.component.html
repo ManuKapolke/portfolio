@@ -1,6 +1,6 @@
 <div class="project-container">
     <a class="img-container" *ngIf="!reversed" href="{{ project.url }}">
-        <img src="{{ project.img }}" alt="screen showing {{ project.name }} project" data-aos="flip-up"
+        <img src="{{ project.img }}" alt="laptop showing {{ project.name }} project" data-aos="flip-up"
             data-aos-duration="1500">
     </a>
 
@@ -21,7 +21,15 @@
     </div>
 
     <a class="img-container" *ngIf="reversed" href="{{ project.url }}">
-        <img src="{{ project.img }}" alt="screen showing {{ project.name }} project" data-aos="flip-up"
+        <img src="{{ project.img }}" alt="laptop showing {{ project.name }} project" data-aos="flip-up"
             data-aos-duration="1500">
+    </a>
+
+
+    <a class="imgPhone-container"
+        [ngStyle]="{'left': reversed ? 'unset' : '0', 'right': reversed ? '0' : 'unset', 'justify-content': reversed ? 'flex-end' : 'flex-start'}"
+        href="{{ project.url }}">
+        <img src="{{ project.imgPhone }}" alt="smartphone showing {{ project.name }} project" data-aos="fade"
+            data-aos-delay="1000" data-aos-duration="2000" data-aos-offset="-50">
     </a>
 </div>

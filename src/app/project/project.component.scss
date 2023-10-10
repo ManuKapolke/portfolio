@@ -4,6 +4,7 @@
     justify-content: center;
     gap: 10%;
     margin: 35px 0;
+    position: relative;
 
     .img-container {
         width: 40%;
@@ -13,6 +14,25 @@
 
         img {
             width: 100%;
+        }
+
+        &:hover {
+            scale: 0.98;
+        }
+    }
+
+    .imgPhone-container {
+        position: absolute;
+        bottom: 0;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
         }
 
         &:hover {

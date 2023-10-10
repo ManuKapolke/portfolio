@@ -10,7 +10,8 @@
     <app-project *ngFor="let p of projectListService.projects; let i = index" [project]="p"
         [reversed]="i % 2 == 1"></app-project>
 
-    <img class="bg-shape-A" src="assets/img/bg-shapes/v{{ layoutService.version }}_shadow_portfolio-contact.png">
+    <img *ngIf="projectListService.projects.length > 3" class="bg-shape-A"
+        src="assets/img/bg-shapes/v{{ layoutService.version }}_shadow_portfolio-contact.png">
     <div class="bg-shape-B">
         <img src="assets/img/bg-shapes/v{{ layoutService.version }}_shadow_portfolio.png">
     </div>

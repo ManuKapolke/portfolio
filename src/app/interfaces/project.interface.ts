@@ -5,4 +5,5 @@ export interface Project {
     url: string;
     githubUrl: string;
     img: string;
+    imgPhone: string;
 }

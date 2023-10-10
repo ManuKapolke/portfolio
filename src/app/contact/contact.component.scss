@@ -2,12 +2,14 @@
     flex-direction: column;
     gap: 35px;
     padding-bottom: calc(2 * var(--paddingLR));
+    z-index: 3;
 
     .h-line-contact {
         position: absolute;
         top: 168px;
         left: 0;
         width: calc(var(--paddingLR) - var(--gapLineText));
+        z-index: 3;
     }
 
     .text-and-form {

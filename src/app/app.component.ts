@@ -13,9 +13,9 @@ export class AppComponent {
 
   ngOnInit(): void {
     AOS.init(
-      // {
-      //   once: true
-      // }
+      {
+        once: true
+      }
     );
   }
 

@@ -19,6 +19,7 @@ Variables
     --headerHeight: 110px;
     --footerHeight: 280px;
     --paddingLR: 10vw;
+    --paddingLRMobile: 2vw;
     --gapLineText: 40px;
     --transitionTime: 125ms;
 }
@@ -458,5 +459,9 @@ Media Queries
 
     .mobile-only {
         display: flex !important;
+    }
+
+    section {
+        padding: 0 var(--paddingLRMobile);
     }
 }

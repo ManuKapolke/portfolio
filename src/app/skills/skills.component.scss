@@ -24,6 +24,7 @@
 
             span {
                 text-align: center;
+                font-size: 1rem;
             }
         }
     }
@@ -39,7 +40,7 @@
 
         .h-line-skills {
             position: absolute;
-            top: 60px;
+            top: 3vw;
             right: calc(-1 * var(--paddingLR));
             width: calc(var(--paddingLR) - var(--gapLineText));
         }
@@ -57,5 +58,47 @@
         transform: rotate(30deg);
         scale: 1.3;
         z-index: 2;
+    }
+}
+
+/*--------------------------------------------------
+Media Queries
+---------------------------------------------------*/
+@media (width < 900px) {
+    #skills {
+        .skills-icons-container {
+            // gap: 60px 100px;
+            // width: 45vw;
+
+            .skill-icon {
+                // width: 88px;
+                // height: 100px;
+                // gap: 10px;
+
+                img {
+                    height: 45px;
+                }
+
+                // span {
+                //     font-size: 1rem;
+                // }
+            }
+        }
+
+        .skills-text-container {
+            // width: 30vw;
+            // gap: 35px;
+
+            .h-line-skills {
+                // top: 3vw;
+                right: calc(-1 * var(--paddingLRMobile));
+                width: calc(var(--paddingLRMobile) - var(--gapLineText));
+            }
+
+            a {
+                // margin-top: 25px;
+                margin-right: 40px !important;
+            }
+        }
     }
 }

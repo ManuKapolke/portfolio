@@ -325,13 +325,6 @@ a {
 }
 
 /*--------------------------------------------------
-Show/Hide
----------------------------------------------------*/
-.hidden {
-    visibility: hidden !important;
-}
-
-/*--------------------------------------------------
 Animation Classes
 ---------------------------------------------------*/
 .heartbeat {
@@ -390,6 +383,21 @@ Animation Keyframes
 }
 
 /*--------------------------------------------------
+Show/Hide
+---------------------------------------------------*/
+.hidden {
+    visibility: hidden !important;
+}
+
+.desktop-only {
+    display: flex !important;
+}
+
+.mobile-only {
+    display: none !important;
+}
+
+/*--------------------------------------------------
 Media Queries
 ---------------------------------------------------*/
 @media (width < 1600px) {
@@ -424,5 +432,15 @@ Media Queries
 @media (width < 1024px) {
     body {
         font-size: 8px;
+    }
+}
+
+@media (width < 900px) {
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: flex !important;
     }
 }

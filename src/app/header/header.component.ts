@@ -6,27 +6,37 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  // @ViewChild('toggleBurgerMenu') toggleBurgerMenu?: HTMLInputElement;
-
-  isChecked: boolean = false;
+  mobileMenuIsOpen: boolean = false;
   scrollTop: number = 0;
 
-  toggleBodyOverflow() {
-    if (this.isChecked) {
+  toggleMobileMenu() {
+    if (this.mobileMenuIsOpen) {
       this.closeMobileMenu();
     } else {
-      this.scrollTop = document.documentElement.scrollTop;
-      document.body.style.setProperty('--scrollTop', -(this.scrollTop) + "px");
-      document.body.classList.add('no-scrolling');
-      this.isChecked = true;
+      this.openMobileMenu();
     }
   }
 
+  openMobileMenu() {
+    this.freezeBody();
+    this.mobileMenuIsOpen = true;
+  }
+
   closeMobileMenu() {
+    this.unfreezeBody();
+    this.mobileMenuIsOpen = false;
+  }
+
+  freezeBody() {
+    this.scrollTop = document.documentElement.scrollTop;
+    document.body.style.setProperty('--scrollTop', `-${this.scrollTop}px`);
+    document.body.classList.add('no-scrolling');
+  }
+
+  unfreezeBody() {
     document.body.classList.remove('no-scrolling');
     document.documentElement.style.scrollBehavior = 'auto';
     document.documentElement.scrollTop = this.scrollTop;
     document.documentElement.style.scrollBehavior = 'smooth';
-    this.isChecked = false;
   }
 }

@@ -31,6 +31,6 @@
     }
 }
 
-#toggle-burger-menu:checked~.mobile-menu {
-    left: 0;
+.slide-in {
+    left: 0 !important;
 }

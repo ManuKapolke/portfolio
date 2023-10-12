@@ -197,8 +197,6 @@ Scrollbar
 .no-scrolling {
     position: fixed;
     top: var(--scrollTop, 0);
-    //   inline-size: 100%;
-    //   overflow-y:scroll; 
 }
 
 /*--------------------------------------------------

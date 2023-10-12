@@ -10,7 +10,7 @@
         justify-content: center;
 
         .photo {
-            width: clamp(264px, 25vw, 360px);
+            width: clamp(320px, 25vw, 360px);
             z-index: 1;
         }
 
@@ -50,27 +50,28 @@
         justify-content: center;
         gap: 10px;
         z-index: 2;
+        // font-size: 16px;
 
         .main-title-left {
             writing-mode: vertical-lr;
             transform: rotate(-180deg);
-            // font-size: 62px;
-            font-size: 3.875em;
-            letter-spacing: 3px;
+            // font-size: 3.875em;
+            font-size: 3vw;
+            letter-spacing: 0.24vw;
             white-space: nowrap;
-            margin-bottom: 3px;
+            margin-bottom: 0.24vw;
         }
 
         .main-title-right {
             white-space: nowrap;
 
             .sub-title {
-                // font-size: 59.6px;
-                font-size: 3.725em;
+                // font-size: 3.725em;
+                font-size: 3vw;
                 color: var(--mainColorA);
                 line-height: 100%;
-                // letter-spacing: 5px;
-                letter-spacing: 0.085em;
+                // letter-spacing: 0.085em;
+                letter-spacing: 0.24vw;
             }
         }
     }
@@ -92,8 +93,7 @@
         }
 
         .email {
-            font-size: 24px;
-            // font-size: 1.5em;
+            font-size: 1.5rem;
         }
     }
 
@@ -112,8 +112,7 @@
         color: inherit;
 
         span {
-            font-size: 24px;
-            // font-size: 1.5em;
+            font-size: 1.5rem;
             writing-mode: vertical-lr;
         }
 
@@ -146,10 +145,26 @@
 /*--------------------------------------------------
 Media Queries
 ---------------------------------------------------*/
+// @media (width < 1600px) {
+//     .main-title {
+//         font-size: 14px !important;
+//     }
+// }
+
+// @media (width < 1400px) {
+//     .main-title {
+//         font-size: 12px !important;
+//     }
+// }
+
 @media (width < 1280px) {
     #above-the-fold {
+        // .main-title {
+        //     font-size: 10px !important;
+        // }
+
         .contact-bar .email {
-            font-size: 20px;
+            // font-size: 20px;
 
             .text-link-mirrored {
                 // left: -5px;
@@ -165,9 +180,9 @@ Media Queries
             // bottom: 40px;
             // gap: 8px;
 
-            span {
-                font-size: 20px;
-            }
+            // span {
+            //     font-size: 20px;
+            // }
 
             .arrow-down {
                 // height: 30px;
@@ -180,3 +195,9 @@ Media Queries
         }
     }
 }
+
+// @media (width < 1024px) {
+//     .main-title {
+//         font-size: 8px !important;
+//     }
+// }

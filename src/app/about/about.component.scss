@@ -6,15 +6,17 @@
     gap: 35px;
 
     .about-text-container {
-        width: 35vw;
+        width: 45vw;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        z-index: 3;
 
         img {
             width: 110px;
             height: 50px;
             padding: 0 calc(0.5 * (110px - 50px));
+            margin-bottom: calc(0.3 * (110px - 50px));
         }
     }
 
@@ -38,15 +40,35 @@
         z-index: 3;
 
         img {
-            width: 30vw;
-            height: 30vw;
+            width: 25vw;
+            height: 25vw;
             object-fit: contain;
             border-radius: 50%;
             border: 4px solid var(--mainColorB);
         }
 
         .h-line-about {
-            width: 15vw;
+            width: 12vw;
+        }
+    }
+}
+
+/*--------------------------------------------------
+Media Queries
+---------------------------------------------------*/
+@media (width < 900px) {
+    #about {
+        .about-text-container {
+            width: 100%;
+        }
+    }
+}
+
+@media (width < 500px) {
+    #about {
+        .about-text-container {
+            flex-direction: column;
+            align-items: center;
         }
     }
 }

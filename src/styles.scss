@@ -101,6 +101,7 @@ body {
     background-color: var(--bgColor);
     color: white;
     overflow-x: hidden;
+    overflow-y: scroll;
     font-size: 16px;
 }
 
@@ -192,6 +193,13 @@ Scrollbar
 // ::-webkit-scrollbar-thumb:hover {
 //     background: var(--mainColorA);
 // }
+
+.no-scrolling {
+    position: fixed;
+    top: var(--scrollTop, 0);
+    //   inline-size: 100%;
+    //   overflow-y:scroll; 
+}
 
 /*--------------------------------------------------
 Buttons
@@ -325,6 +333,23 @@ a {
 }
 
 /*--------------------------------------------------
+Overlay
+---------------------------------------------------*/
+.overlay-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bgColorTransparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 5;
+}
+
+/*--------------------------------------------------
 Animation Classes
 ---------------------------------------------------*/
 .heartbeat {
@@ -388,6 +413,10 @@ Show/Hide
 .hidden {
     visibility: hidden !important;
 }
+
+// .slide-in {
+//     transform: translate(0);
+// }
 
 .desktop-only {
     display: flex !important;

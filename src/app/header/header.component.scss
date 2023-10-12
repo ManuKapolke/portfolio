@@ -21,4 +21,16 @@
         gap: 40px;
         font-size: 24px;
     }
+
+    .mobile-menu {
+        left: 100vw;
+
+        nav {
+            flex-direction: column;
+        }
+    }
+}
+
+#toggle-burger-menu:checked~.mobile-menu {
+    left: 0;
 }

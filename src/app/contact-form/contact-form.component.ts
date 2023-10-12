@@ -29,7 +29,7 @@ export class ContactFormComponent {
     document.body.style.overflowY = 'hidden';
 
     try {
-      const response = await fetch('https://manu-kapolke.developerakademie.net/portfolio/send_mail.php', {
+      const response = await fetch('https://manu-kapolke.developerakademie.net/angular-projects/portfolio/send_mail.php', {
         method: 'POST',
         body: this.getFormData()
       });

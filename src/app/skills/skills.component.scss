@@ -2,24 +2,25 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row-reverse;
 
     .skills-icons-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 60px 100px;
+        gap: clamp(24px, 3vw, 60px) clamp(40px, 6vw, 100px);
         width: 45vw;
         z-index: 3;
 
         .skill-icon {
             width: 88px;
-            height: 100px;
+            height: clamp(100px, 11vw, 120px);
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 10px;
 
             img {
-                height: 60px;
+                height: clamp(45px, 5vw, 60px);
             }
 
             span {
@@ -37,17 +38,17 @@
         gap: 35px;
         text-align: end;
         position: relative;
+        margin-bottom: 35px;
 
         .h-line-skills {
             position: absolute;
-            top: 3vw;
+            top: 50%;
             right: calc(-1 * var(--paddingLR));
             width: calc(var(--paddingLR) - var(--gapLineText));
         }
 
         a {
-            margin-top: 25px;
-            margin-right: 80px;
+            margin: 25px 5vw 25px 0;
         }
     }
 
@@ -66,39 +67,28 @@ Media Queries
 ---------------------------------------------------*/
 @media (width < 900px) {
     #skills {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 45px;
+
         .skills-icons-container {
-            // gap: 60px 100px;
-            // width: 45vw;
-
-            .skill-icon {
-                // width: 88px;
-                // height: 100px;
-                // gap: 10px;
-
-                img {
-                    height: 45px;
-                }
-
-                // span {
-                //     font-size: 1rem;
-                // }
-            }
+            width: fit-content;
+            justify-content: center;
         }
 
         .skills-text-container {
-            // width: 30vw;
+            width: 100%;
             // gap: 35px;
 
             .h-line-skills {
-                // top: 3vw;
                 right: calc(-1 * var(--paddingLRMobile));
-                width: calc(var(--paddingLRMobile) - var(--gapLineText));
+                width: calc(var(--paddingLRMobile) - var(--gapLineTextMobile));
             }
 
-            a {
-                // margin-top: 25px;
-                margin-right: 40px !important;
-            }
+            // a {
+            //     // margin-top: 25px;
+            //     margin-right: 40px !important;
+            // }
         }
     }
 }

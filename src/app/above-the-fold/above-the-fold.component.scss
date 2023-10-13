@@ -32,7 +32,7 @@
         left: 0;
         right: 0;
         height: 33vh;
-        width: 100%;
+        min-width: 100%;
         z-index: 1;
     }
 
@@ -201,7 +201,7 @@ Media Queries
     #above-the-fold {
         flex-direction: column;
         justify-content: flex-start;
-        gap: 45px;
+        gap: 60px;
 
         .photo-container .photo {
             height: 500px;
@@ -236,13 +236,13 @@ Media Queries
     #above-the-fold {
         .main-title {
             .main-title-left {
-                font-size: 16px;
-                letter-spacing: 1.5px;
+                font-size: clamp(16px, 6vw, 34px);
+                letter-spacing: clamp(1.5px, 0.5vw, 2.5px);
             }
 
             .main-title-right .sub-title {
-                font-size: 16px;
-                letter-spacing: 2.7px;
+                font-size: clamp(16px, 6vw, 34px);
+                letter-spacing: clamp(1.5px, 0.5vw, 2.5px);
             }
         }
     }

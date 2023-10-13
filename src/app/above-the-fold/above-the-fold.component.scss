@@ -56,10 +56,11 @@
             writing-mode: vertical-lr;
             transform: rotate(-180deg);
             // font-size: 3.875em;
-            font-size: 3vw;
-            letter-spacing: 0.24vw;
+            font-size: clamp(34px, 3vw, 50px);
+            letter-spacing: clamp(2.5px, 0.24vw, 4px);
             white-space: nowrap;
-            margin-bottom: 0.24vw;
+            margin-bottom: clamp(2px, 0.24vw, 4px);
+            line-height: 110%;
         }
 
         .main-title-right {
@@ -67,11 +68,11 @@
 
             .sub-title {
                 // font-size: 3.725em;
-                font-size: 3vw;
+                font-size: clamp(34px, 3vw, 50px);
                 color: var(--mainColorA);
                 line-height: 100%;
                 // letter-spacing: 0.085em;
-                letter-spacing: 0.24vw;
+                letter-spacing: clamp(2.5px, 0.24vw, 4px);
             }
         }
     }
@@ -196,8 +197,53 @@ Media Queries
     }
 }
 
-// @media (width < 1024px) {
-//     .main-title {
-//         font-size: 8px !important;
-//     }
-// }
+@media (width < 900px) {
+    #above-the-fold {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 45px;
+
+        .photo-container .photo {
+            height: 500px;
+            object-fit: cover;
+            object-position: top;
+            margin-bottom: -45px;
+        }
+
+        .banner {
+            height: 60vh;
+        }
+
+        .contact-bar {
+            position: relative;
+            bottom: unset;
+            left: unset;
+            // gap: 40px;
+
+            .h-line-abovethefold {
+                $distanceToLeft: calc(50vw - 100px);
+                position: absolute;
+                top: 50%;
+                left: calc(-1 * $distanceToLeft);
+                width: calc($distanceToLeft - 40px);
+            }
+        }
+    }
+}
+
+
+@media (width < 500px) {
+    #above-the-fold {
+        .main-title {
+            .main-title-left {
+                font-size: 16px;
+                letter-spacing: 1.5px;
+            }
+
+            .main-title-right .sub-title {
+                font-size: 16px;
+                letter-spacing: 2.7px;
+            }
+        }
+    }
+}

@@ -78,17 +78,11 @@ Media Queries
 
         .skills-text-container {
             width: 100%;
-            // gap: 35px;
 
             .h-line-skills {
                 right: calc(-1 * var(--paddingLRMobile));
                 width: calc(var(--paddingLRMobile) - var(--gapLineTextMobile));
             }
-
-            // a {
-            //     // margin-top: 25px;
-            //     margin-right: 40px !important;
-            // }
         }
     }
 }

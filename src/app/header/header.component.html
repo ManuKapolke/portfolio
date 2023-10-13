@@ -23,6 +23,9 @@
 
     <aside class="overlay-screen mobile-menu" [class.slide-in]="mobileMenuIsOpen">
         <nav class="mobile-only">
+            <a class="text-link" href="#" (click)="closeMobileMenu()">
+                <span>Home</span>
+            </a>
             <a class="text-link" href="#about" (click)="closeMobileMenu()">
                 <span>About Me</span>
             </a>

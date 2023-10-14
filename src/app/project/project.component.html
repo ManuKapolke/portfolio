@@ -1,14 +1,18 @@
 <div class="project-container">
-    <a class="img-container" *ngIf="!reversed" href="{{ project.url }}">
-        <img src="{{ project.img }}" alt="laptop showing {{ project.name }} project" data-aos="flip-up"
-            data-aos-duration="1500">
+    <a class="img-container" *ngIf="!isReversed()" href="{{ project.url }}">
+        <img class="img-laptop" src="{{ project.img }}" alt="laptop showing {{ project.name }} project"
+            data-aos="flip-up" data-aos-duration="1500">
+        <div class="imgPhone-container" [ngStyle]="getStyleForImgPhoneContainer()">
+            <img class="img-phone" src="{{ project.imgPhone }}" alt="smartphone showing {{ project.name }} project"
+                data-aos="fade" data-aos-delay="1000" data-aos-duration="2000" data-aos-offset="-50">
+        </div>
     </a>
 
-    <div class="text-container" [ngStyle]="{'text-align': reversed ? 'right' : 'left'}">
+    <div class="text-container" [ngStyle]="getStyleForTextContainer()">
         <h3>{{ project.name }}</h3>
         <h4>{{ project.techStack }}</h4>
         <p class="project-description">{{ project.description }}</p>
-        <div class="project-buttons" [ngStyle]="{'justify-content': reversed ? 'flex-end' : 'flex-start'}">
+        <div class="project-buttons" [ngStyle]="getStyleForButtons()">
             <a class="btn btn-filled-A" href="{{ project.url }}" target="_blank" data-aos="flip-up" data-aos-delay="500"
                 data-aos-duration="1500" data-aos-offset="-200">
                 Live test
@@ -20,16 +24,14 @@
         </div>
     </div>
 
-    <a class="img-container" *ngIf="reversed" href="{{ project.url }}">
-        <img src="{{ project.img }}" alt="laptop showing {{ project.name }} project" data-aos="flip-up"
-            data-aos-duration="1500">
+    <a class="img-container" *ngIf="isReversed()" href="{{ project.url }}">
+        <img class="img-laptop" src="{{ project.img }}" alt="laptop showing {{ project.name }} project"
+            data-aos="flip-up" data-aos-duration="1500">
+        <div class="imgPhone-container" [ngStyle]="getStyleForImgPhoneContainer()">
+            <img class="img-phone" src="{{ project.imgPhone }}" alt="smartphone showing {{ project.name }} project"
+                data-aos="fade" data-aos-delay="1000" data-aos-duration="2000" data-aos-offset="-50">
+        </div>
     </a>
 
 
-    <a class="imgPhone-container"
-        [ngStyle]="{'left': reversed ? 'unset' : '0', 'right': reversed ? '0' : 'unset', 'justify-content': reversed ? 'flex-end' : 'flex-start'}"
-        href="{{ project.url }}">
-        <img src="{{ project.imgPhone }}" alt="smartphone showing {{ project.name }} project" data-aos="fade"
-            data-aos-delay="1000" data-aos-duration="2000" data-aos-offset="-50">
-    </a>
 </div>

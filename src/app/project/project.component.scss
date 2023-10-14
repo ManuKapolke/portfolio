@@ -4,15 +4,16 @@
     justify-content: center;
     gap: 10%;
     margin: 35px 0;
-    position: relative;
+    // position: relative;
 
     .img-container {
-        width: 40%;
+        width: 45%;
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        position: relative;
 
-        img {
+        .img-laptop {
             width: 100%;
         }
 
@@ -24,31 +25,31 @@
     .imgPhone-container {
         position: absolute;
         bottom: 0;
-        width: 200px;
-        height: 200px;
+        width: 16vw;
+        height: 16vw;
         display: flex;
         align-items: flex-end;
         justify-content: flex-start;
 
-        img {
+        .img-phone {
             max-width: 100%;
             max-height: 100%;
         }
 
-        &:hover {
-            scale: 0.98;
-        }
+        // &:hover {
+        //     scale: 0.98;
+        // }
     }
 
     .text-container {
-        width: 40%;
+        width: 45%;
         display: flex;
         flex-direction: column;
         gap: 10px;
 
         .project-buttons {
             display: flex;
-            gap: 80px;
+            gap: clamp(16px, 7vw, 80px);
             margin-top: 30px;
         }
     }
@@ -60,11 +61,17 @@ Media Queries
 @media (width < 900px) {
     .project-container {
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
 
         .img-container {
             width: 80%;
+            max-width: 500px;
             justify-content: center;
+        }
+
+        .imgPhone-container {
+            width: clamp(100px, 33vw, 200px);
+            height: clamp(100px, 33vw, 200px);
         }
 
         .text-container {

@@ -6,8 +6,8 @@
 
     .h-line-contact {
         position: absolute;
-        top: 168px;
-        left: 0;
+        top: 50%;
+        left: calc(-1 * var(--paddingLR));
         width: calc(var(--paddingLR) - var(--gapLineText));
         z-index: 3;
     }

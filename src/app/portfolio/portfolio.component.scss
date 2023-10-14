@@ -5,20 +5,24 @@
     gap: 35px;
     padding-bottom: var(--headerHeight);
 
-    h2 {
+    .h2-container {
+        position: relative;
         padding: 0 var(--gapLineText);
         background-color: var(--bgColor);
-        z-index: 1;
+        // z-index: 1;
+
+        .h-line-portfolio {
+            position: absolute;
+            top: 50%;
+            left: calc(-1 * (var(--paddingLR)));
+            width: 100vw;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            z-index: -1;
+        }
     }
 
-    .h-line-portfolio {
-        position: absolute;
-        top: 170px;
-        right: 0;
-        width: 75vw;
-        border-top-left-radius: 1px;
-        border-bottom-left-radius: 1px;
-    }
+
 
     app-project {
         z-index: 3;
@@ -42,6 +46,21 @@
 
         img {
             transform: rotate(75deg);
+        }
+    }
+}
+
+/*--------------------------------------------------
+Media Queries
+---------------------------------------------------*/
+@media (width < 900px) {
+    #portfolio {
+        .h2-container {
+            padding: 0 var(--gapLineTextMobile);
+
+            .h-line-portfolio {
+                left: calc(-1 * (var(--paddingLRMobile)));
+            }
         }
     }
 }

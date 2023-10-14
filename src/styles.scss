@@ -116,6 +116,7 @@ section {
     padding: var(--headerHeight) var(--paddingLR) 0 var(--paddingLR);
     position: relative;
     display: flex;
+    overflow-x: clip;
 }
 
 h1 {
@@ -252,12 +253,12 @@ Lines
 ---------------------------------------------------*/
 .h-line-A {
     height: 4px;
-    border: 2px solid var(--mainColorA);
+    border: 2.5px solid var(--mainColorA);
 }
 
 .h-line-B {
     height: 4px;
-    border: 2px solid var(--mainColorB);
+    border: 2.5px solid var(--mainColorB);
 }
 
 /*--------------------------------------------------
@@ -454,14 +455,14 @@ Media Queries
         display: flex !important;
     }
 
-    // ::-webkit-scrollbar {
-    //     width: 8px;
-    // }
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
 
-    // ::-webkit-scrollbar-thumb {
-    //     border-radius: 6px;
-    //     -webkit-box-shadow: inset 0 0 2px 1.5px var(--bgColor);
-    // }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        -webkit-box-shadow: inset 0 0 2px 1.5px var(--bgColor);
+    }
 
     section {
         padding: var(--headerHeight) var(--paddingLRMobile) 0 var(--paddingLRMobile);

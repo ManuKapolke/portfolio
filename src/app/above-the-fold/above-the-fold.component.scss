@@ -8,10 +8,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        // max-height: calc(100vh - var(--headerHeight));
+        height: calc(96vh - var(--headerHeight));
 
         .photo {
             width: clamp(320px, 25vw, 360px);
             z-index: 1;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         .photo-background-shape {
@@ -23,6 +27,7 @@
             justify-content: center;
             overflow-y: hidden;
             height: 720px;
+            max-height: 100%;
         }
     }
 
@@ -89,8 +94,8 @@
 
         .h-line-abovethefold {
             width: var(--paddingLR);
-            border-top-right-radius: 1px;
-            border-bottom-right-radius: 1px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
 
         .email {
@@ -201,17 +206,23 @@ Media Queries
     #above-the-fold {
         flex-direction: column;
         justify-content: flex-start;
-        gap: 60px;
+        gap: 5vh;
 
-        .photo-container .photo {
-            height: 500px;
-            object-fit: cover;
-            object-position: top;
-            margin-bottom: -45px;
+        .photo-container {
+            .photo {
+                height: 70vh;
+                object-fit: cover;
+                object-position: top;
+                // margin-bottom: -6vh;
+            }
         }
 
         .banner {
-            height: 60vh;
+            height: 56vh;
+        }
+
+        .title-and-button {
+            margin-top: -20vh;
         }
 
         .contact-bar {

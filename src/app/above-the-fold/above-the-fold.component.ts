@@ -7,5 +7,9 @@ import { LayoutService } from '../services/layout.service';
   styleUrls: ['./above-the-fold.component.scss']
 })
 export class AboveTheFoldComponent {
-  constructor(public layoutService: LayoutService) { }
+  subTitle: string[] = Array.from('FRONTEND DEVELOPER');
+
+  constructor(public layoutService: LayoutService) {
+    console.log(this.subTitle);
+  }
 }

@@ -53,3 +53,27 @@
         }
     }
 }
+
+/*--------------------------------------------------
+Media Queries
+---------------------------------------------------*/
+@media (width < 900px) {
+    .project-container {
+        flex-direction: column;
+        gap: 10px;
+
+        .img-container {
+            width: 80%;
+            justify-content: center;
+        }
+
+        .text-container {
+            width: 100%;
+            align-items: center;
+
+            .project-description {
+                text-align: center;
+            }
+        }
+    }
+}

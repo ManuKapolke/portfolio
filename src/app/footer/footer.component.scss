@@ -18,6 +18,22 @@
     }
 
     .copyright {
-        font-size: 24px;
+        font-size: 1.5rem;
+    }
+}
+
+/*--------------------------------------------------
+Media Queries
+---------------------------------------------------*/
+@media (width < 900px) {
+    #footer {
+        height: var(--footerHeightMobile);
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+
+        .logo-footer {
+            margin-bottom: 20px;
+        }
     }
 }

@@ -1,7 +1,8 @@
 #contact {
     flex-direction: column;
     gap: 35px;
-    padding-bottom: calc(2 * var(--paddingLR));
+    padding-bottom: calc(2 * var(--paddingLR) + 40px);
+    // padding-bottom: var(--footerHeight);
     z-index: 3;
 
     .h-line-contact {
@@ -48,6 +49,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 3;
 
         &:hover svg path {
             fill: var(--mainColorB);
@@ -64,6 +66,8 @@ Media Queries
 ---------------------------------------------------*/
 @media (width < 900px) {
     #contact {
+        padding-bottom: calc(2 * var(--paddingLRMobile) + 40px);
+
         .text-and-form {
             flex-direction: column;
             gap: 35px;
@@ -75,6 +79,11 @@ Media Queries
             app-contact-form {
                 width: 100%;
             }
+        }
+
+        .scroll-up {
+            bottom: var(--paddingLRMobile);
+            right: var(--paddingLRMobile);
         }
     }
 }

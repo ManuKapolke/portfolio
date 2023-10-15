@@ -12,6 +12,8 @@ export class ContactFormComponent {
   sending: boolean = false;
   messageIsSent: boolean = false;
 
+  scrollTop: number = 0;
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -24,9 +26,10 @@ export class ContactFormComponent {
   }
 
   async sendMail() {
-    this.sending = true;
+    // document.body.style.overflowY = 'hidden';
+    this.freezeBody();
     this.contactForm.disable();
-    document.body.style.overflowY = 'hidden';
+    this.sending = true;
 
     try {
       const response = await fetch('https://manu-kapolke.developerakademie.net/angular-projects/portfolio/send_mail.php', {
@@ -59,7 +62,8 @@ export class ContactFormComponent {
   closeSendingScreen(): void {
     this.sending = false;
     this.messageIsSent = false;
-    document.body.style.overflowY = 'unset';
+    // document.body.style.overflowY = 'unset';
+    this.unfreezeBody();
     this.contactForm.enable();
   }
 
@@ -71,5 +75,24 @@ export class ContactFormComponent {
 
   validInput(name: string): boolean {
     return this.contactForm.get(name)?.valid || false;
+  }
+
+  freezeBody() {
+    this.scrollTop = document.documentElement.scrollTop;
+    document.body.style.setProperty('--scrollTop', `-${this.scrollTop}px`);
+    document.body.classList.add('no-scrolling');
+  }
+
+  unfreezeBody() {
+    document.body.classList.remove('no-scrolling');
+    document.documentElement.style.scrollBehavior = 'auto';
+    document.documentElement.scrollTop = this.scrollTop;
+    document.documentElement.style.scrollBehavior = 'smooth';
+  }
+
+  getStyleForOverlayPosition() {
+    console.log(this.scrollTop);
+
+    return { 'top': this.scrollTop };
   }
 }

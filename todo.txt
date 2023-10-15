@@ -1,4 +1,5 @@
-- Mobile 
+- Mobile
+- Overlay component/service
 - Impressum 
 - Datenschutz
 - Hosting

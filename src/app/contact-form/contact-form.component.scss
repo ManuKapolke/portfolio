@@ -106,14 +106,6 @@ form {
 
         span {
             line-height: 24px;
-
-            // a {
-            //     color: var(--mainColorA);
-
-            //     &:hover {
-            //         text-decoration: underline;
-            //     }
-            // }
         }
     }
 }
@@ -130,6 +122,7 @@ form {
 
 .sending-screen {
     gap: 72px;
+    z-index: 11;
 
     .message-sent {
         display: flex;

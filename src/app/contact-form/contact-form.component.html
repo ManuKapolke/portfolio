@@ -44,7 +44,8 @@
     </button>
 </form>
 
-<div class="overlay-screen sending-screen" *ngIf="sending" (click)="closeSendingScreen()">
+<div class="overlay-screen sending-screen" *ngIf="sending" [ngStyle]="getStyleForOverlayPosition()"
+    (click)="closeSendingScreen()">
     <div class="logo-sending" [class.heartbeat]="!messageIsSent" [class.fade-in]="messageIsSent"></div>
     <div class="message-sent" [class.hidden]="!messageIsSent" [class.fade-in-from-below]="messageIsSent">
         <h3 class="message-sent-text">Your message has been sent, thank you!</h3>

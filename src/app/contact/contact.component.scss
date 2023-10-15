@@ -16,6 +16,7 @@
         display: flex;
         justify-content: space-between;
         gap: 10%;
+        z-index: 3;
 
         .contact-text-container {
             width: 40%;
@@ -54,6 +55,26 @@
 
         &:hover svg rect {
             stroke: var(--mainColorB);
+        }
+    }
+}
+
+/*--------------------------------------------------
+Media Queries
+---------------------------------------------------*/
+@media (width < 900px) {
+    #contact {
+        .text-and-form {
+            flex-direction: column;
+            gap: 35px;
+
+            .contact-text-container {
+                width: 100%;
+            }
+
+            app-contact-form {
+                width: 100%;
+            }
         }
     }
 }

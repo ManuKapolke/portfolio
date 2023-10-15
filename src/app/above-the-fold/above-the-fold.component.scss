@@ -74,7 +74,6 @@
                 font-size: clamp(34px, 3vw, 50px);
                 color: var(--mainColorA);
                 line-height: 100%;
-                // letter-spacing: clamp(2.5px, 0.24vw, 4px);
                 display: flex;
                 justify-content: space-between;
 
@@ -154,35 +153,10 @@
 /*--------------------------------------------------
 Media Queries
 ---------------------------------------------------*/
-// @media (width < 1600px) {
-//     .main-title {
-//         font-size: 14px !important;
-//     }
-// }
-
-// @media (width < 1400px) {
-//     .main-title {
-//         font-size: 12px !important;
-//     }
-// }
-
 @media (width < 1280px) {
     #above-the-fold {
-        // .main-title {
-        //     font-size: 10px !important;
-        // }
-
-        .contact-bar .email {
-            // font-size: 20px;
-
-            .text-link-mirrored {
-                // left: -5px;
-                top: 28px;
-            }
-
-            // &:hover .text-link-mirrored {
-            //     height: 32px;
-            // }
+        .contact-bar .email .text-link-mirrored {
+            top: 28px;
         }
 
         .scroll-down {

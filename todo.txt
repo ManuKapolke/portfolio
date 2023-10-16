@@ -1,4 +1,5 @@
 - Mobile
+- Scrollbar hide/show
 - Overlay component/service
 - z-indexes
 - Impressum 

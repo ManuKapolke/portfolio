@@ -24,6 +24,8 @@ Variables
     --gapLineText: 2vw;
     --gapLineTextMobile: 1vw;
     --transitionTime: 125ms;
+    --scrollBarWidth: 16px;
+    --scrollBarWidthMobile: 8px;
 }
 
 /*--------------------------------------------------
@@ -184,7 +186,7 @@ Logo
 Scrollbar
 ---------------------------------------------------*/
 ::-webkit-scrollbar {
-    width: 16px;
+    width: var(--scrollBarWidth);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -441,7 +443,7 @@ Media Queries
     }
 
     ::-webkit-scrollbar {
-        width: 8px;
+        width: var(--scrollBarWidthMobile);
     }
 
     ::-webkit-scrollbar-thumb {

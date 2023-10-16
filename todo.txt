@@ -1,5 +1,4 @@
-- Mobile
-- Scrollbar hide/show
+- Mobile: above-the-fold tablet hochformat
 - Overlay component/service
 - z-indexes
 - Impressum 

@@ -2,6 +2,7 @@
     height: 100vh;
     align-items: center;
     justify-content: space-between;
+    overflow-y: hidden;
 
     .photo-container {
         position: relative;
@@ -12,7 +13,7 @@
         height: calc(96vh - var(--headerHeight));
 
         .photo {
-            width: clamp(320px, 25vw, 360px);
+            // width: clamp(320px, 25vw, 360px);
             z-index: 1;
             max-height: 100%;
             object-fit: contain;
@@ -20,13 +21,14 @@
 
         .photo-background-shape {
             position: absolute;
-            top: -30px;
-            left: calc(-0.5 * (872px - clamp(264px, 25vw, 360px)));
+            // top: -30px;
+            // left: calc(-0.5 * (872px - clamp(264px, 25vw, 360px)));
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
-            overflow-y: hidden;
-            height: 720px;
+            // overflow-y: hidden;
+            // height: 720px;
+            height: 80vh;
             max-height: 100%;
         }
     }
@@ -118,24 +120,18 @@
         cursor: pointer;
         text-decoration: none;
         color: inherit;
-        // margin-bottom: 30px;
 
         span {
             font-size: clamp(1rem, 3vh, 1.5rem);
             writing-mode: vertical-lr;
-            // position: relative;
         }
 
         .arrow-down {
-            // position: absolute;
-            // left: -15%;
-            // bottom: -28px;
             height: clamp(1rem, 3vh, 1.5rem);
             margin-right: 0.25em;
 
             svg {
                 scale: 1.1;
-                // margin-left: 6px;
                 animation: pointDown 2s infinite;
             }
         }
@@ -163,24 +159,6 @@ Media Queries
     #above-the-fold {
         .contact-bar .email .text-link-mirrored {
             top: 28px;
-        }
-
-        .scroll-down {
-            // bottom: 40px;
-            // gap: 8px;
-
-            // span {
-            //     font-size: 20px;
-            // }
-
-            .arrow-down {
-                // height: 30px;
-
-                svg {
-                    // scale: 1.1;
-                    // margin-left: 4px;
-                }
-            }
         }
     }
 }
@@ -266,6 +244,14 @@ Media Queries
                     scale: 0.8;
                 }
             }
+        }
+    }
+}
+
+@media (height > 1280px) {
+    #above-the-fold {
+        .banner {
+            height: 45vh;
         }
     }
 }

@@ -1,5 +1,3 @@
-- Overlay component/service
-- kein bg-shape hinter Portfolio-headline
 - Impressum 
 - Datenschutz
 - Hosting

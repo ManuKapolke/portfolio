@@ -1,6 +1,5 @@
-- Mobile: above-the-fold tablet hochformat
 - Overlay component/service
-- z-indexes
+- kein bg-shape hinter Portfolio-headline
 - Impressum 
 - Datenschutz
 - Hosting

@@ -9,6 +9,7 @@
         position: relative;
         padding: 0 var(--gapLineText);
         background-color: var(--bgColor);
+        border-radius: 20px;
         // z-index: 1;
 
         .h-line-portfolio {
@@ -24,18 +25,18 @@
 
     .portfolio-text {
         text-align: center;
-        z-index: 3;
+        // z-index: 3;
     }
 
-    app-project {
-        z-index: 3;
-    }
+    // app-project {
+    //     z-index: 3;
+    // }
 
     .bg-shape-A {
         position: absolute;
         top: 950px;
         left: -200px;
-        z-index: 2;
+        // z-index: 2;
     }
 
     .bg-shape-B {
@@ -45,7 +46,7 @@
         width: calc(899px - 500px);
         height: 977px;
         overflow: hidden;
-        z-index: 2;
+        // z-index: 2;
 
         img {
             transform: rotate(75deg);

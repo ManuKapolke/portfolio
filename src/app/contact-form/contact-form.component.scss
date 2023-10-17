@@ -120,23 +120,23 @@ form {
     box-shadow: 0 0 3px 1px var(--errorColor), inset 0 0 3px 1px var(--errorColor) !important;
 }
 
-.sending-screen {
-    gap: 72px;
-    z-index: 11;
+// .sending-screen {
+//     gap: 72px;
+//     // z-index: 999;
 
-    .message-sent {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 32px;
+//     .message-sent {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: center;
+//         gap: 32px;
 
-        .message-sent-text {
-            color: white;
-        }
+//         .message-sent-text {
+//             color: white;
+//         }
 
-        span {
-            cursor: pointer;
-        }
-    }
-}
+//         span {
+//             cursor: pointer;
+//         }
+//     }
+// }

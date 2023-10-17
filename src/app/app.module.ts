@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { ContactIconsComponent } from './contact-icons/contact-icons.component';
+import { SendingScreenComponent } from './sending-screen/sending-screen.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ContactIconsComponent } from './contact-icons/contact-icons.component';
     ContactComponent,
     ContactFormComponent,
     FooterComponent,
-    ContactIconsComponent
+    ContactIconsComponent,
+    SendingScreenComponent
   ],
   imports: [
     BrowserModule,

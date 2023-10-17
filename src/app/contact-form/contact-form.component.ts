@@ -11,9 +11,11 @@ import { OverlayService } from '../services/overlay.service';
 export class ContactFormComponent {
   contactForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,
-    public overlayService: OverlayService) {
-    this.overlayService.closeScreen$().subscribe(() => {
+  constructor(
+    private formBuilder: FormBuilder,
+    public overlayService: OverlayService
+  ) {
+    this.overlayService.closeScreenSubject$.subscribe(() => {
       this.contactForm.enable();
     });
   }

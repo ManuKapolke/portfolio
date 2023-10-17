@@ -5,6 +5,8 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class OverlayService {
+  mobileMenuIsOpen: boolean = false;
+
   sending: boolean = false;
   messageIsSent: boolean = false;
 
@@ -12,8 +14,26 @@ export class OverlayService {
 
   private closeScreenSubject: Subject<void> = new Subject<void>();
 
-  closeScreen$(): Observable<void> {
+  get closeScreenSubject$() {
     return this.closeScreenSubject.asObservable();
+  }
+
+  toggleMobileMenu() {
+    if (this.mobileMenuIsOpen) {
+      this.closeMobileMenu();
+    } else {
+      this.openMobileMenu();
+    }
+  }
+
+  openMobileMenu() {
+    this.freezeBody();
+    this.mobileMenuIsOpen = true;
+  }
+
+  closeMobileMenu() {
+    this.unfreezeBody();
+    this.mobileMenuIsOpen = false;
   }
 
   openSendingScreen(): void {

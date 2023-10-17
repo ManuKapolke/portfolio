@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { ContactIconsComponent } from './contact-icons/contact-icons.component';
 import { SendingScreenComponent } from './sending-screen/sending-screen.component';
+import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SendingScreenComponent } from './sending-screen/sending-screen.componen
     ContactFormComponent,
     FooterComponent,
     ContactIconsComponent,
-    SendingScreenComponent
+    SendingScreenComponent,
+    MobileMenuComponent
   ],
   imports: [
     BrowserModule,

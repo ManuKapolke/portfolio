@@ -369,6 +369,10 @@ Animation Classes
     animation: glow 2s ease-in-out infinite alternate;
 }
 
+.fade-in-from-below {
+    animation: fadeInFromBelow 500ms ease-in-out;
+}
+
 /*--------------------------------------------------
 Animation Keyframes
 ---------------------------------------------------*/
@@ -413,6 +417,20 @@ Animation Keyframes
             0 0 calc(2 * $factor) var(--mainColorA),
             0 0 calc(3 * $factor) var(--mainColorB),
             0 0 calc(4 * $factor) white;
+    }
+}
+
+@keyframes fadeInFromBelow {
+    $offset: 20px;
+
+    from {
+        transform: translateY($offset);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 

@@ -9,7 +9,5 @@ import { LayoutService } from '../services/layout.service';
 export class AboveTheFoldComponent {
   subTitle: string[] = Array.from('FRONTEND DEVELOPER');
 
-  constructor(public layoutService: LayoutService) {
-    console.log(this.subTitle);
-  }
+  constructor(public layoutService: LayoutService) { }
 }

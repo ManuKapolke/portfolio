@@ -1,0 +1,20 @@
+#legal-notice {
+    flex-direction: column;
+    padding-bottom: var(--headerHeight);
+    gap: 3em;
+
+    .imprint,
+    .privacy-policy {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25em;
+
+        p {
+            margin-bottom: 1.5em;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    }
+}

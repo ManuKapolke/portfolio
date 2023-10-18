@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'fonts';
 @import 'aos/dist/aos.css';
 
 /*--------------------------------------------------
@@ -41,52 +41,29 @@ Mixins
 }
 
 /*--------------------------------------------------
-Fonts
+Logo
 ---------------------------------------------------*/
-/* poppins-regular - latin */
-@font-face {
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    src: url('assets/fonts/poppins-v20-latin-regular.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+.logo-header {
+    @include logo();
+    cursor: pointer;
+
+    &:hover {
+        background-image: var(--logoB);
+    }
 }
 
-/* poppins-italic - latin */
-@font-face {
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: italic;
-    font-weight: 400;
-    src: url('assets/fonts/poppins-v20-latin-italic.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+.logo-sending {
+    @include logo(var(--logoB), 140px);
 }
 
-/* poppins-700 - latin */
-@font-face {
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    src: url('assets/fonts/poppins-v20-latin-700.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
+.logo-footer {
+    @include logo($height: 100px);
+    cursor: pointer;
 
-/* poppins-700italic - latin */
-@font-face {
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: italic;
-    font-weight: 700;
-    src: url('assets/fonts/poppins-v20-latin-700italic.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    &:hover {
+        background-image: var(--logoB);
+    }
 }
-
 
 /*--------------------------------------------------
 Base
@@ -113,100 +90,6 @@ body {
 }
 
 /*--------------------------------------------------
-Sections and Headlines
----------------------------------------------------*/
-section {
-    min-height: 100vh;
-    padding: var(--headerHeight) var(--paddingLR) 0 var(--paddingLR);
-    position: relative;
-    display: flex;
-    overflow-x: clip;
-}
-
-h1 {
-    // font-size: 5em;
-    font-size: clamp(45px, 4vw, 68px);
-    font-weight: 700;
-    text-decoration: underline;
-    text-decoration-color: var(--mainColorB);
-    // text-decoration-thickness: 4px;
-    // text-underline-offset: 16px;
-    text-decoration-thickness: 0.05em;
-    text-underline-offset: 0.2em;
-}
-
-h2 {
-    font-size: clamp(45px, 4vw, 90px);
-    font-weight: 700;
-    z-index: 3;
-    position: relative;
-}
-
-h3 {
-    // font-size: 2em;
-    // font-size: 2vw;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--mainColorA);
-}
-
-h4 {
-    // font-size: 1.5em;
-    // font-size: 1.5vw;
-    font-size: 24px;
-    font-weight: 400;
-    color: var(--mainColorB);
-}
-
-h5 {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--mainColorA);
-}
-
-h6 {
-    font-size: 1.25em;
-    font-weight: 400;
-    color: var(--mainColorB);
-}
-
-/*--------------------------------------------------
-Logo
----------------------------------------------------*/
-.logo-header {
-    @include logo();
-    cursor: pointer;
-
-    &:hover {
-        background-image: var(--logoB);
-    }
-}
-
-.logo-sending {
-    @include logo(var(--logoB), 140px);
-}
-
-.logo-footer {
-    @include logo($height: 100px);
-    cursor: pointer;
-
-    &:hover {
-        background-image: var(--logoB);
-    }
-}
-
-/*--------------------------------------------------
-Navbar
----------------------------------------------------*/
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    font-size: 1.5rem;
-}
-
-/*--------------------------------------------------
 Scrollbar
 ---------------------------------------------------*/
 ::-webkit-scrollbar {
@@ -222,6 +105,68 @@ Scrollbar
 .no-scrolling {
     position: fixed;
     top: var(--scrollTop, 0);
+}
+
+/*--------------------------------------------------
+Navbar
+---------------------------------------------------*/
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    font-size: 1.5rem;
+}
+
+/*--------------------------------------------------
+Sections and Headlines
+---------------------------------------------------*/
+section {
+    min-height: 100vh;
+    padding: var(--headerHeight) var(--paddingLR) 0 var(--paddingLR);
+    position: relative;
+    display: flex;
+    overflow-x: clip;
+}
+
+h1 {
+    font-size: clamp(45px, 4vw, 68px);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--mainColorB);
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: 0.2em;
+}
+
+h2 {
+    font-size: clamp(45px, 4vw, 90px);
+    font-weight: 700;
+    z-index: 3;
+    position: relative;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--mainColorA);
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--mainColorB);
+}
+
+h5 {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--mainColorA);
+}
+
+h6 {
+    font-size: 1.25em;
+    font-weight: 400;
+    color: var(--mainColorB);
 }
 
 /*--------------------------------------------------
@@ -368,7 +313,6 @@ Overlay
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    // z-index: 99;
 }
 
 /*--------------------------------------------------
@@ -453,10 +397,6 @@ Show/Hide
 .hidden {
     visibility: hidden !important;
 }
-
-// .slide-in {
-//     transform: translate(0);
-// }
 
 .desktop-only {
     display: flex !important;

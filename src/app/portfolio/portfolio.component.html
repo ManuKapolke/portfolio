@@ -1,4 +1,10 @@
 <section id="portfolio">
+    <img *ngIf="projectListService.projects.length > 3" class="bg-shape-A"
+        src="assets/img/bg-shapes/v{{ layoutService.version }}_shadow_portfolio-contact.png">
+    <div class="bg-shape-B">
+        <img src="assets/img/bg-shapes/v{{ layoutService.version }}_shadow_portfolio.png">
+    </div>
+
     <div class="h2-container">
         <div class="h-line-A h-line-portfolio" data-aos="fade" data-aos-delay="500" data-aos-duration="1000"></div>
         <h2 data-aos="fade" data-aos-duration="1000">
@@ -7,17 +13,9 @@
     </div>
 
     <span class="portfolio-text" data-aos="fade" data-aos-duration="1000">
-        <!-- This page is a sample of my work - please feel free to try them out.  -->
         I kindly invite you to explore my portfolio and experience the diligence and dedication instilled into my
         projects.
     </span>
 
     <app-project *ngFor="let p of projectListService.projects" [project]="p"></app-project>
-
-    <img *ngIf="projectListService.projects.length > 3" class="bg-shape-A"
-        src="assets/img/bg-shapes/v{{ layoutService.version }}_shadow_portfolio-contact.png">
-    <div class="bg-shape-B">
-        <img src="assets/img/bg-shapes/v{{ layoutService.version }}_shadow_portfolio.png">
-    </div>
-
 </section>

@@ -7,7 +7,7 @@ import { LayoutService } from '../services/layout.service';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent {
-  skills = [
+  public skills = [
     { name: 'HTML', icon: 'html.png' },
     { name: 'CSS', icon: 'css.png' },
     { name: 'JavaScript', icon: 'javascript.png' },
@@ -24,8 +24,4 @@ export class SkillsComponent {
   ];
 
   constructor(public layoutService: LayoutService) { }
-
-  fadeDirection(index: number): string {
-    return index % 2 === 0 ? 'left' : 'right';
-  }
 }

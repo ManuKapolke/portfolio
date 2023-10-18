@@ -21,14 +21,6 @@
 Media Queries
 ---------------------------------------------------*/
 @media (width < 900px) {
-    .desktop-only {
-        display: none !important;
-    }
-
-    .mobile-only {
-        display: flex !important;
-    }
-
     #header {
         padding: 0 var(--paddingLRMobile);
     }

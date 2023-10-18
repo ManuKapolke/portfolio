@@ -1,6 +1,7 @@
 - Datenschutz
 - Hosting
 - Cleaning
+- Refactoring
 - EN/DE
 - Photos
 

@@ -2,18 +2,15 @@
     height: 100vh;
     align-items: center;
     justify-content: space-between;
-    // overflow-y: hidden;
 
     .photo-container {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        // max-height: calc(100vh - var(--headerHeight));
         height: calc(96vh - var(--headerHeight));
 
         .photo {
-            // width: clamp(320px, 25vw, 360px);
             max-width: 30vw;
             z-index: 1;
             max-height: 100%;
@@ -22,13 +19,9 @@
 
         .photo-background-shape {
             position: absolute;
-            // top: -30px;
-            // left: calc(-0.5 * (872px - clamp(264px, 25vw, 360px)));
             display: flex;
             align-items: center;
             justify-content: center;
-            // overflow-y: hidden;
-            // height: 720px;
             height: 80vh;
             max-height: 100%;
         }
@@ -58,7 +51,6 @@
         justify-content: center;
         gap: 10px;
         z-index: 3;
-        // font-size: 16px;
 
         .main-title-left {
             writing-mode: vertical-lr;
@@ -176,7 +168,6 @@ Media Queries
                 max-width: unset;
                 object-fit: cover;
                 object-position: top;
-                // margin-bottom: -6vh;
             }
         }
 
@@ -192,7 +183,6 @@ Media Queries
             position: relative;
             bottom: unset;
             left: unset;
-            // gap: 40px;
 
             .h-line-abovethefold {
                 $distanceToLeft: calc(50vw - 100px);
@@ -226,8 +216,6 @@ Media Queries
     #above-the-fold {
         .scroll-down {
             .arrow-down {
-                // margin-right: 0.25em;
-
                 svg {
                     scale: 0.9;
                 }

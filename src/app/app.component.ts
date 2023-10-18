@@ -9,8 +9,6 @@ import * as AOS from 'aos';
 })
 export class AppComponent {
 
-  constructor() { }
-
   ngOnInit(): void {
     AOS.init(
       {

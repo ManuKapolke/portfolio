@@ -10,11 +10,11 @@ import { ResponsivenessService } from '../services/responsiveness.service';
 })
 export class ProjectComponent {
   @Input() project!: Project;
-  projectIndex: number = -1;
+  private projectIndex: number = -1;
 
   constructor(
-    public projectListService: ProjectListService,
-    public responsiveService: ResponsivenessService
+    private projectListService: ProjectListService,
+    private responsiveService: ResponsivenessService
   ) { }
 
   ngOnInit() {

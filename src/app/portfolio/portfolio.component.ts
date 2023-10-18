@@ -10,5 +10,6 @@ import { LayoutService } from '../services/layout.service';
 export class PortfolioComponent {
   constructor(
     public layoutService: LayoutService,
-    public projectListService: ProjectListService) { }
+    public projectListService: ProjectListService
+  ) { }
 }

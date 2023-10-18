@@ -2,22 +2,18 @@
     flex-direction: column;
     gap: 35px;
     padding-bottom: calc(2 * var(--paddingLR) + 40px);
-    // padding-bottom: var(--footerHeight);
-    // z-index: 3;
 
     .h-line-contact {
         position: absolute;
         top: 50%;
         left: calc(-1 * var(--paddingLR));
         width: calc(var(--paddingLR) - var(--gapLineText));
-        // z-index: 3;
     }
 
     .text-and-form {
         display: flex;
         justify-content: space-between;
         gap: 10%;
-        // z-index: 3;
 
         .contact-text-container {
             width: 40%;
@@ -37,7 +33,6 @@
         bottom: -180px;
         left: -400px;
         transform: rotate(250deg);
-        // z-index: 2;
     }
 
     .scroll-up {
@@ -49,7 +44,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        // z-index: 3;
 
         &:hover svg path {
             fill: var(--mainColorB);

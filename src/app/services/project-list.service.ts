@@ -5,7 +5,7 @@ import { Project } from '../interfaces/project.interface';
   providedIn: 'root'
 })
 export class ProjectListService {
-  projects: Project[] = [
+  public projects: Project[] = [
     {
       name: 'Join',
       techStack: 'JavaScript | HTML | CSS',

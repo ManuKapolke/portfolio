@@ -4,16 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LayoutService {
-  version: 1 | 2 | 3 = 2;
-  mainColorA = ['#9747FF', '#4B47FF', '#FF4747'];
-  mainColorB = ['#70E61C', '#00BEE8', '#FA7902'];
+  public version: 1 | 2 | 3 = 2;
+  private mainColorA = ['#9747FF', '#4B47FF', '#FF4747'];
+  private mainColorB = ['#70E61C', '#00BEE8', '#FA7902'];
 
   constructor() {
     this.setColorTheme(this.version);
   }
 
   setColorTheme(version: 1 | 2 | 3): void {
-    // Set the values of the global CSS custom properties
     document.documentElement.style.setProperty('--mainColorA', this.mainColorA[version - 1]);
     document.documentElement.style.setProperty('--mainColorB', this.mainColorB[version - 1]);
     document.documentElement.style.setProperty('--logoA', `url('assets/logo/v${version}_mk-logo_a.png')`);

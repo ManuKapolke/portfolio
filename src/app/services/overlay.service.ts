@@ -5,13 +5,10 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class OverlayService {
-  mobileMenuIsOpen: boolean = false;
-
-  sending: boolean = false;
-  messageIsSent: boolean = false;
-
-  scrollTop: number = 0;
-
+  public mobileMenuIsOpen: boolean = false;
+  public sending: boolean = false;
+  public messageIsSent: boolean = false;
+  private scrollTop: number = 0;
   private closeScreenSubject: Subject<void> = new Subject<void>();
 
   get closeScreenSubject$() {
@@ -64,10 +61,4 @@ export class OverlayService {
     document.documentElement.scrollTop = this.scrollTop;
     document.documentElement.style.scrollBehavior = 'smooth';
   }
-
-  // getStyleForOverlayPosition() {
-  //   console.log(this.scrollTop);
-
-  //   return { 'top': this.scrollTop };
-  // }
 }

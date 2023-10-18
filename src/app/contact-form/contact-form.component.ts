@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OverlayService } from '../services/overlay.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -9,13 +10,14 @@ import { OverlayService } from '../services/overlay.service';
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent {
-  contactForm!: FormGroup;
+  public contactForm!: FormGroup;
+  private overlaySubscription!: Subscription;
 
   constructor(
-    private formBuilder: FormBuilder,
-    public overlayService: OverlayService
+    public overlayService: OverlayService,
+    private formBuilder: FormBuilder
   ) {
-    this.overlayService.closeScreenSubject$.subscribe(() => {
+    this.overlaySubscription = this.overlayService.closeScreenSubject$.subscribe(() => {
       this.contactForm.enable();
     });
   }
@@ -23,34 +25,51 @@ export class ContactFormComponent {
   ngOnInit() {
     this.contactForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],//Validators.minLength(2)
+      email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required, Validators.minLength(2)]],
       checkbox: [false, Validators.requiredTrue]
     });
   }
 
+  ngOnDestroy() {
+    this.overlaySubscription.unsubscribe();
+  }
+
   async sendMail() {
-    this.overlayService.openSendingScreen();
-    this.contactForm.disable();
+    this.prepareSending();
 
     try {
-      const response = await fetch('https://manu-kapolke.developerakademie.net/angular-projects/portfolio/send_mail.php', {
-        method: 'POST',
-        body: this.getFormData()
-      });
-
-      if (response.ok) {
-        console.log('Mail sent successfully');
-      } else {
-        console.error('Mail sending failed:', response.statusText);
-      }
+      const response = await this.postFormData();
+      this.checkResponse(response);
     } catch (error) {
       console.error('An error occurred:', error);
     }
 
+    this.finishSending();
+  }
+
+  prepareSending(): void {
+    this.overlayService.openSendingScreen();
+    this.contactForm.disable();
+  }
+
+  finishSending(): void {
     setTimeout(() => {
       this.overlayService.setSendingFinished();
     }, 1200);
+  }
+
+  async postFormData(): Promise<Response> {
+    return fetch('https://manu-kapolke.developerakademie.net/angular-projects/portfolio/send_mail.php', {
+      method: 'POST',
+      body: this.getFormData()
+    });
+  }
+
+  checkResponse(response: Response): void {
+    if (!response.ok) {
+      console.error('Mail sending failed:', response.statusText);
+    }
   }
 
   getFormData(): FormData {

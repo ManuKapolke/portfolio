@@ -24,8 +24,8 @@
     .imgPhone-container {
         position: absolute;
         bottom: 0;
-        width: 16vw;
-        height: 16vw;
+        width: min(16vw, 300px);
+        height: min(16vw, 300px);
         display: flex;
         align-items: flex-end;
         justify-content: flex-start;

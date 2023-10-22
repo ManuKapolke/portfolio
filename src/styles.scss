@@ -20,7 +20,7 @@ Variables
     --headerHeight: 110px;
     --footerHeight: 280px;
     --footerHeightMobile: 380px;
-    --paddingLR: 10vw;
+    --paddingLR: max(10vw, calc(0.5 * (100vw - 1920px)));
     --paddingLRMobile: 5vw;
     --gapLineText: 2vw;
     --gapLineTextMobile: 1vw;

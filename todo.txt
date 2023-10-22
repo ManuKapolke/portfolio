@@ -12,7 +12,7 @@
 - Projekte checken (großer Bildschirm)
 
 Kevin:
-- Content maximale Breite 1920px (oder 1440px)
-- klare Kanten?
-- Formular nach senden leeren
-- Tab Titel kürzer
+DONE - Content maximale Breite 1920px (oder 1440px)
+DONE - klare Kanten?
+DONE - Formular nach senden leeren
+DONE - Tab Titel kürzer

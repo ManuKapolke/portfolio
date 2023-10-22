@@ -18,6 +18,7 @@ export class ContactFormComponent {
     private formBuilder: FormBuilder
   ) {
     this.overlaySubscription = this.overlayService.closeScreenSubject$.subscribe(() => {
+      this.contactForm.reset({ name: '', email: '', message: '', checkbox: false });
       this.contactForm.enable();
     });
   }

@@ -3,7 +3,16 @@
 - Refactoring
 - EN/DE
 - Photos
+- Loom verursacht Bottom unter Footer
+- Skills: Wordpress?
 
 - Xing
 - LinkedIn
 - Logo?
+- Projekte checken (großer Bildschirm)
+
+Kevin:
+- Content maximale Breite 1920px (oder 1440px)
+- klare Kanten?
+- Formular nach senden leeren
+- Tab Titel kürzer

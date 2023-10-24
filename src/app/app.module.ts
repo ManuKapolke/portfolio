@@ -18,7 +18,7 @@ import { ContactIconsComponent } from './contact-icons/contact-icons.component';
 import { SendingScreenComponent } from './sending-screen/sending-screen.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { MainComponent } from './main/main.component';
-import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
+import { ImprintComponent } from './imprint/imprint.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
     SendingScreenComponent,
     MobileMenuComponent,
     MainComponent,
-    LegalNoticeComponent
+    ImprintComponent
   ],
   imports: [
     BrowserModule,

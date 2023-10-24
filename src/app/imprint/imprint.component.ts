@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-legal-notice',
-  templateUrl: './legal-notice.component.html',
-  styleUrls: ['./legal-notice.component.scss']
+  selector: 'app-imprint',
+  templateUrl: './imprint.component.html',
+  styleUrls: ['./imprint.component.scss']
 })
-export class LegalNoticeComponent {
+export class ImprintComponent {
   ngAfterViewInit(): void {
     document.documentElement.style.scrollBehavior = 'auto';
     document.documentElement.scrollTop = 0;

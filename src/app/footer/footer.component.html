@@ -1,7 +1,11 @@
 <div id="footer">
     <div class="logo-and-legal">
         <a class="logo-footer" href="#"></a>
-        <a class="legal-notice text-link desktop-only" routerLink="/legal-notice">Legal notice</a>
+        <div class="legal-notice desktop-only">
+            <a class="text-link" routerLink="/imprint">Imprint</a>
+            <span>|</span>
+            <a class="text-link" routerLink="/imprint">Privacy</a>
+        </div>
     </div>
 
     <span class="copyright">
@@ -10,5 +14,9 @@
 
     <app-contact-icons></app-contact-icons>
 
-    <a class="legal-notice text-link mobile-only" routerLink="/legal-notice">Legal notice</a>
+    <div class="legal-notice mobile-only">
+        <a class="text-link" routerLink="/imprint">Imprint</a>
+        <span>|</span>
+        <a class="text-link" routerLink="/imprint">Privacy</a>
+    </div>
 </div>

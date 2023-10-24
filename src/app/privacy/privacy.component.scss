@@ -1,0 +1,18 @@
+#privacy {
+    flex-direction: column;
+    padding-bottom: var(--headerHeight);
+    gap: 0.25em;
+
+    p,
+    ul {
+        margin-bottom: 1.5em;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    hr {
+        margin: 0.5em 0 2em 0;
+    }
+}

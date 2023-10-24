@@ -19,6 +19,7 @@ import { SendingScreenComponent } from './sending-screen/sending-screen.componen
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { MainComponent } from './main/main.component';
 import { ImprintComponent } from './imprint/imprint.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ImprintComponent } from './imprint/imprint.component';
     SendingScreenComponent,
     MobileMenuComponent,
     MainComponent,
-    ImprintComponent
+    ImprintComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,3 @@
-- Datenschutz
 - Hosting
 - Refactoring
 - EN/DE
@@ -9,7 +8,7 @@
 - Xing
 - LinkedIn
 - Logo?
-- Projekte checken (großer Bildschirm)
+- Projekte checken (großer Bildschirm, Inputs absichern (cross site scripting))
 
 Kevin:
 DONE - Content maximale Breite 1920px (oder 1440px)

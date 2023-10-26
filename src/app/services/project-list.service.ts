@@ -35,7 +35,7 @@ export class ProjectListService {
     // },
     {
       name: 'Pokédex',
-      techStack: 'JavaScript | HTML | CSS | API',
+      techStack: 'JavaScript | HTML | CSS | API | Bootstrap',
       description: 'Based on the PokéAPI, a simple library that provides and catalogues Pokémon information.',
       url: 'https://manu-kapolke.developerakademie.net/pokedex',
       githubUrl: 'https://github.com/ManuKapolke/pokedex',

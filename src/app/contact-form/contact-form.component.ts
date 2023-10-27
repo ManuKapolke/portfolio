@@ -41,12 +41,13 @@ export class ContactFormComponent {
 
     try {
       const response = await this.postFormData();
-      this.checkResponse(response);
+      if (!response.ok) {
+        throw new Error('Mail sending failed: ' + response.statusText);
+      }
+      this.finishSending();
     } catch (error) {
       console.error('An error occurred:', error);
     }
-
-    this.finishSending();
   }
 
   prepareSending(): void {
@@ -61,16 +62,10 @@ export class ContactFormComponent {
   }
 
   async postFormData(): Promise<Response> {
-    return fetch('https://manu-kapolke.developerakademie.net/angular-projects/portfolio/send_mail.php', {
+    return fetch('https://manukapolke.de/send_mail.php', {
       method: 'POST',
       body: this.getFormData()
     });
-  }
-
-  checkResponse(response: Response): void {
-    if (!response.ok) {
-      console.error('Mail sending failed:', response.statusText);
-    }
   }
 
   getFormData(): FormData {

@@ -1,5 +1,5 @@
 <div class="project-container">
-    <a class="img-container" *ngIf="!isReversed()" href="{{ project.url }}">
+    <a class="img-container" *ngIf="!isReversed()" href="{{ project.url }}" target="_blank">
         <img class="img-laptop" src="{{ project.img }}" alt="laptop showing {{ project.name }} project"
             data-aos="flip-up" data-aos-duration="1500">
         <div class="imgPhone-container" [ngStyle]="getStyleForImgPhoneContainer()">
@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <a class="img-container" *ngIf="isReversed()" href="{{ project.url }}">
+    <a class="img-container" *ngIf="isReversed()" href="{{ project.url }}" target="_blank">
         <img class="img-laptop" src="{{ project.img }}" alt="laptop showing {{ project.name }} project"
             data-aos="flip-up" data-aos-duration="1500">
         <div class="imgPhone-container" [ngStyle]="getStyleForImgPhoneContainer()">

@@ -10,7 +10,7 @@ export class ProjectListService {
       name: 'Join',
       techStack: 'JavaScript | HTML | CSS',
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      url: 'https://manu-kapolke.developerakademie.net/join',
+      url: 'https://join.manukapolke.de',
       githubUrl: 'https://github.com/ManuKapolke/join',
       img: 'assets/img/projects/laptop_join.png',
       imgPhone: 'assets/img/projects/smartphone_join.png'
@@ -19,7 +19,7 @@ export class ProjectListService {
       name: 'El Pollo Loco',
       techStack: 'JavaScript | HTML | CSS',
       description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and salsa to fight against a psycho chicken.',
-      url: 'https://manu-kapolke.developerakademie.net/el_pollo_loco',
+      url: 'https://el-pollo-loco.manukapolke.de',
       githubUrl: 'https://github.com/ManuKapolke/el_pollo_loco',
       img: 'assets/img/projects/laptop_el-pollo-loco.png',
       imgPhone: 'assets/img/projects/smartphone_el-pollo-loco.png'
@@ -37,7 +37,7 @@ export class ProjectListService {
       name: 'Pokédex',
       techStack: 'JavaScript | HTML | CSS | API | Bootstrap',
       description: 'Based on the PokéAPI, a simple library that provides and catalogues Pokémon information.',
-      url: 'https://manu-kapolke.developerakademie.net/pokedex',
+      url: 'https://pokedex.manukapolke.de',
       githubUrl: 'https://github.com/ManuKapolke/pokedex',
       img: 'assets/img/projects/laptop_pokedex.png',
       imgPhone: 'assets/img/projects/smartphone_pokedex.png'

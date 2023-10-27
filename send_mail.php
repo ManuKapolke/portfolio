@@ -2,8 +2,8 @@
 
 ########### CONFIG ###############
 
-$recipient = 'manukapolke@gmail.com'; # Bitte hier deine E-Mail angeben
-// $redirect = 'https://manu-kapolke.developerakademie.net/portfolio/success.html';
+$recipient = 'mail@manukapolke.de'; # Bitte hier deine E-Mail angeben
+// $redirect = 'https://manukapolke.de/success.html';
 
 ########### CONFIG END ###########
 

@@ -20,6 +20,7 @@ export class SkillsComponent {
     { name: 'Firebase', icon: 'firebase.png' },
     { name: 'Bootstrap', icon: 'bootstrap.svg' },
     { name: 'Material Design', icon: 'material.png' },
+    { name: 'WordPress', icon: 'wp.png' },
     { name: 'SCRUM', icon: 'scrum.png' }
   ];
 

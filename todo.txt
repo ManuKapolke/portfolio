@@ -1,12 +1,8 @@
-- Hosting
 - Refactoring
 - EN/DE
 - Photos
 - Loom verursacht Bottom unter Footer
-- Skills: Wordpress?
 
-- Xing
-- LinkedIn
 - Logo?
 - Projekte checken (großer Bildschirm, Inputs absichern (cross site scripting))
 

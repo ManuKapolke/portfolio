@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-page-imprint',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-imprint.component.scss']
 })
 export class PageImprintComponent {
+
+  constructor(public translate: TranslateService) { }
+
   ngAfterViewInit(): void {
     document.documentElement.style.scrollBehavior = 'auto';
     document.documentElement.scrollTop = 0;

@@ -14,7 +14,6 @@ export class SectionAboveTheFoldComponent {
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.setSubTitle(event.lang);
     });
-
   }
 
   setSubTitle(language: string): void {

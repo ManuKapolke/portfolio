@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Project } from '../interfaces/project.interface';
 import { ProjectListService } from '../services/project-list.service';
 import { ResponsivenessService } from '../services/responsiveness.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-project',
@@ -13,12 +14,17 @@ export class ProjectComponent {
   private projectIndex: number = -1;
 
   constructor(
+    public translate: TranslateService,
     private projectListService: ProjectListService,
     private responsiveService: ResponsivenessService
   ) { }
 
   ngOnInit() {
     this.projectIndex = this.projectListService.projects.indexOf(this.project);
+  }
+
+  getProjectDescription(): string {
+    return this.translate.currentLang === 'de' ? this.project.descriptionDE : this.project.descriptionEN;
   }
 
   isReversed(): boolean {

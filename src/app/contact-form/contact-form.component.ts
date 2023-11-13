@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OverlayService } from '../services/overlay.service';
 import { Subscription } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class ContactFormComponent {
 
   constructor(
     public overlayService: OverlayService,
+    public translate: TranslateService,
     private formBuilder: FormBuilder
   ) {
     this.overlaySubscription = this.overlayService.closeScreenSubject$.subscribe(() => {
@@ -34,6 +36,34 @@ export class ContactFormComponent {
 
   ngOnDestroy() {
     this.overlaySubscription.unsubscribe();
+  }
+
+  getPlaceholder(field: 'name' | 'email' | 'message'): string {
+    if (this.translate.currentLang === 'de') {
+      return this.getPlaceholderDE(field);
+    } else {
+      return this.getPlaceholderEN(field);
+    }
+  }
+
+  getPlaceholderEN(field: 'name' | 'email' | 'message'): string {
+    return `Your ${field}`;
+  }
+
+  getPlaceholderDE(field: 'name' | 'email' | 'message'): string {
+    let placeholder = 'Ihr';
+    switch (field) {
+      case 'name':
+        placeholder += ' Name';
+        break;
+      case 'email':
+        placeholder += 'e Email-Adresse';
+        break;
+      case 'message':
+        placeholder += 'e Nachricht';
+        break;
+    }
+    return placeholder;
   }
 
   async sendMail() {

@@ -8,7 +8,6 @@ import * as AOS from 'aos';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
   ngOnInit(): void {
     AOS.init(
       {

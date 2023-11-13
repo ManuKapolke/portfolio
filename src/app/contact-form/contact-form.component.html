@@ -1,29 +1,29 @@
 <form (ngSubmit)="sendMail()" [formGroup]="contactForm" autocomplete="on">
     <div class="input-container" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor=".text-and-form">
-        <input type="text" formControlName="name" placeholder="Your name">
+        <input type="text" formControlName="name" placeholder="{{ getPlaceholder('name') }}">
         <img class="error-icon" *ngIf="invalidInput('name')" src="assets/icons/error.png">
         <img class="done-icon" *ngIf="validInput('name')" src="assets/icons/done.png">
-        <span class="error-msg" [class.hidden]="!invalidInput('name')">
+        <span class="error-msg" [class.hidden]="!invalidInput('name')" translate>
             Please enter a name with at least two characters.
         </span>
     </div>
 
     <div class="input-container" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000"
         data-aos-anchor=".text-and-form">
-        <input type="email" formControlName="email" placeholder="Your email">
+        <input type="email" formControlName="email" placeholder="{{ getPlaceholder('email') }}">
         <img class="error-icon" *ngIf="invalidInput('email')" src="assets/icons/error.png">
         <img class="done-icon" *ngIf="validInput('email')" src="assets/icons/done.png">
-        <span class="error-msg" [class.hidden]="!invalidInput('email')">
+        <span class="error-msg" [class.hidden]="!invalidInput('email')" translate>
             Invalid email format.
         </span>
     </div>
 
     <div class="input-container" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"
         data-aos-anchor=".text-and-form">
-        <textarea formControlName="message" rows="10" placeholder="Your message"></textarea>
+        <textarea formControlName="message" rows="10" placeholder="{{ getPlaceholder('message') }}"></textarea>
         <img class="error-icon" *ngIf="invalidInput('message')" src="assets/icons/error.png">
         <img class="done-icon" *ngIf="validInput('message')" src="assets/icons/done.png">
-        <span class="error-msg" [class.hidden]="!invalidInput('message')">
+        <span class="error-msg" [class.hidden]="!invalidInput('message')" translate>
             Please write a message with at least two characters.
         </span>
     </div>
@@ -33,14 +33,16 @@
         <div class="checkbox-container">
             <input type="checkbox" formControlName="checkbox">
         </div>
-        <span>I've read the <a class="inner-text-link" routerLink="/privacy">privacy policy</a> and agree to the
+        <span translate>I've read the <a class="inner-text-link" routerLink="/privacy" translate>privacy policy</a> and
+            agree to
+            the
             processing of my
             data as outlined.</span>
     </div>
 
     <button type="submit" class="btn btn-filled-B" [class.btn-disabled]="!contactForm.valid"
         [disabled]="!contactForm.valid" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000"
-        data-aos-anchor=".text-and-form">
+        data-aos-anchor=".text-and-form" translate>
         Send message
     </button>
 </form>

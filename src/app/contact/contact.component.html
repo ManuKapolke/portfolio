@@ -1,25 +1,25 @@
 <section id="contact">
     <img class="bg-shape" src="assets/img/bg-shapes/v{{ layoutService.version }}_shadow_portfolio-contact.png">
 
-    <h2>
+    <h2 translate>
         Contact
         <div class="h-line-A h-line-contact" data-aos="fade-right" data-aos-duration="1500"></div>
     </h2>
 
     <div class="text-and-form" data-aos="fade" data-aos-duration="1500">
         <div class="contact-text-container">
-            <h3 style="color: white">Need a frontend developer?</h3>
-            <p>
+            <h3 style="color: white" translate>Need a frontend developer?</h3>
+            <p translate>
                 Contact me through this form, I am interested in all kinds of web developing projects.
             </p>
-            <p>
+            <p translate>
                 Together,
                 we may create compelling and functional digital experiences that leave a lasting impression. Let's
                 embark on
                 this exciting journey of innovation and creativity!
             </p>
-            <p>
-                You got a project waiting to be developed? <b>Contact me!</b>
+            <p [innerHTML]="'You got a project waiting to be developed? Contact me!' | translate">
+                <!-- You got a project waiting to be developed? <b>Contact me!</b> -->
             </p>
         </div>
 

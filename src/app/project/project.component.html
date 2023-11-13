@@ -11,11 +11,11 @@
     <div class="text-container" [ngStyle]="getStyleForTextContainer()">
         <h3>{{ project.name }}</h3>
         <h4>{{ project.techStack }}</h4>
-        <p class="project-description">{{ project.description }}</p>
+        <p class="project-description">{{ getProjectDescription() }}</p>
         <div class="project-buttons" [ngStyle]="getStyleForButtons()">
             <a class="btn btn-filled-A" href="{{ project.url }}" target="_blank" data-aos="flip-up" data-aos-delay="500"
                 data-aos-duration="1500" data-aos-offset="-200">
-                Live test
+                Live Test
             </a>
             <a class="btn btn-unfilled" href="{{ project.githubUrl }}" target="_blank" data-aos="flip-left"
                 data-aos-delay="500" data-aos-duration="1000" data-aos-offset="-200">

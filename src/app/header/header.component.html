@@ -2,9 +2,13 @@
     <a class="logo-header" href="#"></a>
 
     <nav class="desktop-only">
+        <div>
+            <span class="translate-btn" (click)="translateToLanguage('en')">en</span> | <span class="translate-btn"
+                (click)="translateToLanguage('de')">de</span>
+        </div>
         <a class="text-link" href="#about">
-            <span>About Me</span>
-            <span class="text-link-mirrored">About Me</span>
+            <span translate>About Me</span>
+            <span class="text-link-mirrored" translate>About Me</span>
         </a>
         <a class="text-link" href="#skills">
             <span>Skills</span>

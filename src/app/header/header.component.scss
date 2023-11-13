@@ -15,6 +15,14 @@
     z-index: 10;
 }
 
+.translate-btn {
+    cursor: pointer;
+
+    &:hover {
+        color: var(--mainColorB);
+    }
+}
+
 
 
 /*--------------------------------------------------

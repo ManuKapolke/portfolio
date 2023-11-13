@@ -7,5 +7,6 @@ import { LayoutService } from '../services/layout.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
+
   constructor(public layoutService: LayoutService) { }
 }

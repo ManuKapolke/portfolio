@@ -1,28 +1,46 @@
 <div id="header">
     <a class="logo-header" href="#"></a>
 
-    <nav class="desktop-only">
-        <div>
-            <span class="translate-btn" (click)="translateToLanguage('en')">en</span> | <span class="translate-btn"
-                (click)="translateToLanguage('de')">de</span>
-        </div>
-        <a class="text-link" href="#about">
-            <span translate>About Me</span>
-            <span class="text-link-mirrored" translate>About Me</span>
-        </a>
-        <a class="text-link" href="#skills">
-            <span>Skills</span>
-            <span class="text-link-mirrored">Skills</span>
-        </a>
-        <a class="text-link" href="#portfolio">
-            <span>Portfolio</span>
-            <span class="text-link-mirrored">Portfolio</span>
-        </a>
-    </nav>
+    <div class="menu">
+        <div class="language-btn" (mouseenter)="openDropdownByHovering()" (mouseleave)="closeDropdownByHovering()"
+            (click)="toggleDropdown()">
+            <div class="globe-icon"></div>
+            <span>{{ translate.currentLang === 'de' ? 'DE' : 'EN' }}</span>
+            <div class="dropdown-icon"></div>
 
-    <div class="burger-menu mobile-only" [class.close-icon]="overlayService.mobileMenuIsOpen"
-        (click)="overlayService.toggleMobileMenu()">
-        <div class="bar" *ngFor="let b of [0, 1, 2, 3]"></div>
+            <div class="dropdown-menu" *ngIf="dropdownIsOpen">
+                <div class="dropdown-item" (click)="translateToLanguage('en')">
+                    <span [ngStyle]="getLanguageFontColor('en')">English</span>
+                    <img *ngIf="translate.currentLang != 'de'"
+                        src="/assets/icons/v{{ layoutService.version }}_checkmark.png">
+                </div>
+                <div class="dropdown-item" (click)="translateToLanguage('de')">
+                    <span [ngStyle]="getLanguageFontColor('de')">Deutsch</span>
+                    <img *ngIf="translate.currentLang === 'de'"
+                        src="/assets/icons/v{{ layoutService.version }}_checkmark.png">
+                </div>
+            </div>
+        </div>
+
+        <nav class="desktop-only">
+            <a class="text-link" href="#about">
+                <span translate>About Me</span>
+                <span class="text-link-mirrored" translate>About Me</span>
+            </a>
+            <a class="text-link" href="#skills">
+                <span>Skills</span>
+                <span class="text-link-mirrored">Skills</span>
+            </a>
+            <a class="text-link" href="#portfolio">
+                <span>Portfolio</span>
+                <span class="text-link-mirrored">Portfolio</span>
+            </a>
+        </nav>
+
+        <div class="burger-menu mobile-only" [class.close-icon]="overlayService.mobileMenuIsOpen"
+            (click)="overlayService.toggleMobileMenu()">
+            <div class="bar" *ngFor="let b of [0, 1, 2, 3]"></div>
+        </div>
     </div>
 
     <app-overlay-mobile-menu style="position: absolute"></app-overlay-mobile-menu>

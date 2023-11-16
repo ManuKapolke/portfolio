@@ -17,6 +17,8 @@ export class LayoutService {
     document.documentElement.style.setProperty('--mainColorB', this.mainColorB[version - 1]);
     document.documentElement.style.setProperty('--logoA', `url('assets/logo/v${version}_mk-logo_a.png')`);
     document.documentElement.style.setProperty('--logoB', `url('assets/logo/v${version}_mk-logo_b.png')`);
+    document.documentElement.style.setProperty('--globeIconHover', `url('assets/icons/v${version}_globe_hover.png')`);
+    document.documentElement.style.setProperty('--dropdownIconHover', `url('assets/icons/v${version}_down_hover.png')`);
     document.documentElement.style.setProperty('--checkmark', `url('assets/icons/v${version}_checkmark.png')`);
     document.documentElement.style.setProperty('--textareaResizer', `url('assets/icons/v${version}_textarea-resizer.png')`);
   }

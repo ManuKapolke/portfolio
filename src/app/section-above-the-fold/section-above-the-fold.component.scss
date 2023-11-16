@@ -4,24 +4,27 @@
     justify-content: space-between;
 
     .photo-container {
+        align-self: flex-start;
         position: relative;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
-        height: calc(96vh - var(--headerHeight));
+        height: calc(98vh - var(--headerHeight));
+        overflow-y: clip;
 
         .photo {
-            max-width: 30vw;
+            max-width: 28vw;
             z-index: 1;
-            max-height: 100%;
+            // max-height: 100%;
             object-fit: contain;
+            object-position: top;
         }
 
         .photo-background-shape {
             position: absolute;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            // align-items: center;
+            // justify-content: center;
             height: 80vh;
             max-height: 100%;
             overflow: clip;
@@ -165,11 +168,13 @@ Media Queries
         gap: 5vh;
 
         .photo-container {
+            align-self: unset;
+
             .photo {
-                height: 70vh;
-                max-width: unset;
+                max-height: 150vh;
+                max-width: calc(100% - var(--paddingLRMobile));
                 object-fit: cover;
-                object-position: top;
+                // object-position: top;
             }
         }
 
@@ -179,11 +184,12 @@ Media Queries
 
         .title-and-button {
             margin-top: -20vh;
+            gap: 32px;
         }
 
         .contact-bar {
             position: relative;
-            bottom: unset;
+            bottom: 16px;
             left: unset;
 
             .h-line-abovethefold {

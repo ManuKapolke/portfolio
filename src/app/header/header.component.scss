@@ -13,15 +13,81 @@
     background-color: var(--bgColor);
     box-shadow: 0 0 3px 1px var(--bgColor);
     z-index: 10;
-}
 
-.translate-btn {
-    cursor: pointer;
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 48px;
 
-    &:hover {
-        color: var(--mainColorB);
+        .language-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            position: relative;
+            transition: unset;
+            height: 35px;
+
+            .globe-icon {
+                width: 24px;
+                height: 24px;
+                background-image: var(--globeIcon);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            .dropdown-icon {
+                width: 8px;
+                height: 8px;
+                background-image: var(--dropdownIcon);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            .dropdown-menu {
+                position: absolute;
+                top: 32px;
+                background-color: var(--bgColorDropdown);
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+
+                .dropdown-item {
+                    width: 100px;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 8px;
+
+                    &:last-of-type {
+                        border-bottom-left-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                    }
+
+                    &:hover {
+                        background-color: var(--bgColorDropdownHover);
+                    }
+                }
+            }
+
+            &:hover {
+                color: var(--mainColorB);
+                transition: unset;
+
+                .globe-icon {
+                    background-image: var(--globeIconHover);
+                }
+
+                .dropdown-icon {
+                    background-image: var(--dropdownIconHover);
+                }
+            }
+        }
     }
 }
+
+
+
 
 
 

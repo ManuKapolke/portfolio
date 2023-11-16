@@ -1,5 +1,4 @@
 - Refactoring
-- EN/DE
 - Photos
 - Loom verursacht Bottom unter Footer
 

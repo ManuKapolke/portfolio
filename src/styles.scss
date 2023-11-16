@@ -8,6 +8,8 @@ Variables
     --bgColor: #141D2F;
     --bgColorOverlayScreen: rgba(20, 29, 47, 0.8);
     --bgColorUnfilledButton: rgba(20, 29, 47, 0.5);
+    --bgColorDropdown: #192337;
+    --bgColorDropdownHover: #202b40;
     --bgColorInput: #162035;
     --mainColorA: #4B47FF;
     --mainColorB: #00BEE8;
@@ -15,6 +17,10 @@ Variables
     --doneColor: #70E61C;
     --logoA: url('assets/logo/v2_mk-logo_a.png');
     --logoB: url('assets/logo/v2_mk-logo_b.png');
+    --globeIcon: url('assets/icons/globe.png');
+    --globeIconHover: url('assets/icons/v2_globe_hover.png');
+    --dropdownIcon: url('assets/icons/down.png');
+    --dropdownIconHover: url('assets/icons/v2_down_hover.png');
     --checkmark: url('assets/icons/v2_checkmark.png');
     --textareaResizer: url('assets/icons/v2_textarea-resizer.png');
     --headerHeight: 110px;
@@ -116,6 +122,7 @@ nav {
     justify-content: space-between;
     gap: 40px;
     font-size: 1.5rem;
+    width: 354px;
 }
 
 /*--------------------------------------------------

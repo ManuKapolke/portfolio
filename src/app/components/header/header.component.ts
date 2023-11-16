@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
-import { OverlayService } from '../services/overlay.service';
+import { OverlayService } from '../../services/overlay.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LayoutService } from '../services/layout.service';
-import { DropdownService } from '../services/dropdown.service';
+import { LayoutService } from '../../services/layout.service';
+import { DropdownService } from '../../services/dropdown.service';
 
 @Component({
   selector: 'app-header',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ProjectListService } from '../services/project-list.service';
-import { LayoutService } from '../services/layout.service';
+import { ProjectListService } from '../../services/project-list.service';
+import { LayoutService } from '../../services/layout.service';
 
 @Component({
   selector: 'app-section-portfolio',

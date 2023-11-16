@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { OverlayService } from '../services/overlay.service';
+import { OverlayService } from '../../services/overlay.service';
 import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 

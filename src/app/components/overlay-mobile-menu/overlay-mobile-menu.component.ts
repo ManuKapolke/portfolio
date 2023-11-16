@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OverlayService } from '../services/overlay.service';
+import { OverlayService } from '../../services/overlay.service';
 
 @Component({
   selector: 'app-overlay-mobile-menu',

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Project } from '../interfaces/project.interface';
-import { ProjectListService } from '../services/project-list.service';
-import { ResponsivenessService } from '../services/responsiveness.service';
+import { Project } from '../../interfaces/project.interface';
+import { ProjectListService } from '../../services/project-list.service';
+import { ResponsivenessService } from '../../services/responsiveness.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({

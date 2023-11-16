@@ -1,5 +1,4 @@
 - Refactoring
-- Photos
 - Loom verursacht Bottom unter Footer
 
 - Logo?

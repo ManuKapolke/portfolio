@@ -2,20 +2,20 @@
     <a class="logo-header" href="#"></a>
 
     <div class="menu">
-        <div class="language-btn" (mouseenter)="openDropdownByHovering()" (mouseleave)="closeDropdownByHovering()"
-            (click)="toggleDropdown()">
+        <div class="language-btn" (mouseenter)="dropdown.openOnHover()" (mouseleave)="dropdown.closeOnHover()"
+            (click)="dropdown.toggleOnClick()" appStopPropagation>
             <div class="globe-icon"></div>
             <span>{{ translate.currentLang === 'de' ? 'DE' : 'EN' }}</span>
             <div class="dropdown-icon"></div>
 
-            <div class="dropdown-menu" *ngIf="dropdownIsOpen">
+            <div class="dropdown-menu" *ngIf="dropdown.isOpen">
                 <div class="dropdown-item" (click)="translateToLanguage('en')">
-                    <span [ngStyle]="getLanguageFontColor('en')">English</span>
+                    <span [ngStyle]="dropdown.getLanguageFontColor('en')">English</span>
                     <img *ngIf="translate.currentLang != 'de'"
                         src="/assets/icons/v{{ layoutService.version }}_checkmark.png">
                 </div>
                 <div class="dropdown-item" (click)="translateToLanguage('de')">
-                    <span [ngStyle]="getLanguageFontColor('de')">Deutsch</span>
+                    <span [ngStyle]="dropdown.getLanguageFontColor('de')">Deutsch</span>
                     <img *ngIf="translate.currentLang === 'de'"
                         src="/assets/icons/v{{ layoutService.version }}_checkmark.png">
                 </div>

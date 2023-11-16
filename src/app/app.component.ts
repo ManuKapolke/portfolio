@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import * as AOS from 'aos';
 // import AOS from 'aos';
 import { TranslateService } from '@ngx-translate/core';
+import { DropdownService } from './services/dropdown.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
 
-  constructor(public translate: TranslateService) { }
+  constructor(public translate: TranslateService, public dropdown: DropdownService) { }
 
   ngOnInit(): void {
     AOS.init(

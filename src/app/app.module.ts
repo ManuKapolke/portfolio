@@ -23,6 +23,7 @@ import { PagePrivacyComponent } from './page-privacy/page-privacy.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { StopPropagationDirective } from './directives/stop-propagation.directive';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -46,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     OverlayMobileMenuComponent,
     PageMainComponent,
     PageImprintComponent,
-    PagePrivacyComponent
+    PagePrivacyComponent,
+    StopPropagationDirective
   ],
   imports: [
     BrowserModule,

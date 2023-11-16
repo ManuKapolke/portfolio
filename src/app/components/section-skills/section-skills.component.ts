@@ -24,5 +24,5 @@ export class SectionSkillsComponent {
     { name: 'SCRUM', icon: 'scrum.png' }
   ];
 
-  constructor(public layoutService: LayoutService) { }
+  constructor(public layout: LayoutService) { }
 }

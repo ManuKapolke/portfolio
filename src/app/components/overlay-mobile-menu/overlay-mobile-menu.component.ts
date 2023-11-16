@@ -7,5 +7,5 @@ import { OverlayService } from '../../services/overlay.service';
   styleUrls: ['./overlay-mobile-menu.component.scss']
 })
 export class OverlayMobileMenuComponent {
-  constructor(public overlayService: OverlayService) { }
+  constructor(public overlay: OverlayService) { }
 }

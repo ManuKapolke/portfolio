@@ -9,7 +9,7 @@ import { LayoutService } from '../../services/layout.service';
 })
 export class SectionPortfolioComponent {
   constructor(
-    public layoutService: LayoutService,
+    public layout: LayoutService,
     public projectListService: ProjectListService
   ) { }
 }

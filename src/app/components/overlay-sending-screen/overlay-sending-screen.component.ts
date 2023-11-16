@@ -8,14 +8,14 @@ import { OverlayService } from '../../services/overlay.service';
 })
 export class OverlaySendingScreenComponent {
 
-  constructor(public overlayService: OverlayService) { }
+  constructor(public overlay: OverlayService) { }
 
   get sending() {
-    return this.overlayService.sending;
+    return this.overlay.sending;
   }
 
   get messageIsSent() {
-    return this.overlayService.messageIsSent;
+    return this.overlay.messageIsSent;
   }
 
 

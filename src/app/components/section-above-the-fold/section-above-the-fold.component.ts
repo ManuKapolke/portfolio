@@ -10,7 +10,7 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 export class SectionAboveTheFoldComponent {
   public subTitle: string[] = Array.from('FRONTEND DEVELOPER');
 
-  constructor(public layoutService: LayoutService, public translate: TranslateService) {
+  constructor(public layout: LayoutService, public translate: TranslateService) {
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.setSubTitle(event.lang);
     });

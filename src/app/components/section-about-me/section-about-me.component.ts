@@ -8,5 +8,5 @@ import { LayoutService } from '../../services/layout.service';
 })
 export class SectionAboutMeComponent {
 
-  constructor(public layoutService: LayoutService) { }
+  constructor(public layout: LayoutService) { }
 }

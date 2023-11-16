@@ -15,11 +15,11 @@ export class ContactFormComponent {
   private overlaySubscription!: Subscription;
 
   constructor(
-    public overlayService: OverlayService,
+    public overlay: OverlayService,
     public translate: TranslateService,
     private formBuilder: FormBuilder
   ) {
-    this.overlaySubscription = this.overlayService.closeScreenSubject$.subscribe(() => {
+    this.overlaySubscription = this.overlay.closeScreenSubject$.subscribe(() => {
       this.contactForm.reset({ name: '', email: '', message: '', checkbox: false });
       this.contactForm.enable();
     });
@@ -81,13 +81,13 @@ export class ContactFormComponent {
   }
 
   prepareSending(): void {
-    this.overlayService.openSendingScreen();
+    this.overlay.openSendingScreen();
     this.contactForm.disable();
   }
 
   finishSending(): void {
     setTimeout(() => {
-      this.overlayService.setSendingFinished();
+      this.overlay.setSendingFinished();
     }, 1200);
   }
 

@@ -7,5 +7,5 @@ import { LayoutService } from '../../services/layout.service';
   styleUrls: ['./section-contact.component.scss']
 })
 export class SectionContactComponent {
-  constructor(public layoutService: LayoutService) { }
+  constructor(public layout: LayoutService) { }
 }

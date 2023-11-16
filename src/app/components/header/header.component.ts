@@ -12,8 +12,8 @@ import { DropdownService } from '../../services/dropdown.service';
 export class HeaderComponent {
 
   constructor(
-    public layoutService: LayoutService,
-    public overlayService: OverlayService,
+    public layout: LayoutService,
+    public overlay: OverlayService,
     public translate: TranslateService,
     public dropdown: DropdownService
   ) { }

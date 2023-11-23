@@ -1,6 +1,7 @@
-<form (ngSubmit)="sendMail()" [formGroup]="contactForm" autocomplete="on">
+<form (ngSubmit)="sendMail()" [formGroup]="contactForm">
     <div class="input-container" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor=".text-and-form">
-        <input type="text" formControlName="name" placeholder="{{ getPlaceholder('name') }}">
+        <input type="text" formControlName="name" name="name" autocomplete="name"
+            placeholder="{{ getPlaceholder('name') }}">
         <img class="error-icon" *ngIf="invalidInput('name')" src="assets/icons/error.png">
         <img class="done-icon" *ngIf="validInput('name')" src="assets/icons/done.png">
         <span class="error-msg" [class.hidden]="!invalidInput('name')" translate>
@@ -10,7 +11,8 @@
 
     <div class="input-container" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000"
         data-aos-anchor=".text-and-form">
-        <input type="email" formControlName="email" placeholder="{{ getPlaceholder('email') }}">
+        <input type="email" formControlName="email" name="email" autocomplete="email"
+            placeholder="{{ getPlaceholder('email') }}">
         <img class="error-icon" *ngIf="invalidInput('email')" src="assets/icons/error.png">
         <img class="done-icon" *ngIf="validInput('email')" src="assets/icons/done.png">
         <span class="error-msg" [class.hidden]="!invalidInput('email')" translate>
@@ -20,7 +22,8 @@
 
     <div class="input-container" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"
         data-aos-anchor=".text-and-form">
-        <textarea formControlName="message" rows="10" placeholder="{{ getPlaceholder('message') }}"></textarea>
+        <textarea formControlName="message" name="message" rows="10"
+            placeholder="{{ getPlaceholder('message') }}"></textarea>
         <img class="error-icon" *ngIf="invalidInput('message')" src="assets/icons/error.png">
         <img class="done-icon" *ngIf="validInput('message')" src="assets/icons/done.png">
         <span class="error-msg" [class.hidden]="!invalidInput('message')" translate>
@@ -31,7 +34,7 @@
     <div class="policy-checkbox" data-aos="fade-left" data-aos-delay="750" data-aos-duration="1000"
         data-aos-anchor=".text-and-form">
         <div class="checkbox-container">
-            <input type="checkbox" formControlName="checkbox">
+            <input type="checkbox" formControlName="checkbox" name="checkbox">
         </div>
         <span translate>I've read the <a class="inner-text-link" routerLink="/privacy" translate>privacy policy</a> and
             agree to

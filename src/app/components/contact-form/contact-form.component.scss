@@ -12,6 +12,8 @@ form {
         position: relative;
 
         input:not([type='checkbox']),
+        input:-webkit-autofill,
+        input:autofill,
         textarea {
             width: 100%;
             min-height: 60px;

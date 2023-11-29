@@ -26,16 +26,16 @@ export class ProjectListService {
       img: 'assets/img/projects/laptop_el-pollo-loco.png',
       imgPhone: 'assets/img/projects/smartphone_el-pollo-loco.png'
     },
-    // {
-    //   name: 'Simple CRM',
-    //   techStack: 'Angular | TypeScript | HTML | CSS | Firebase',
-    //   descriptionEN: 'A very Simple Customer Relationship Management system working with CRUD functionality.',
-    //   descriptionDE: 'A very Simple Customer Relationship Management system working with CRUD functionality.',
-    //   url: '#',
-    //   githubUrl: '#',
-    //   img: 'assets/img/projects/laptop_simple-crm_figma.png',
-    //   imgPhone: 'assets/img/projects/smartphone_join.png'
-    // },
+    {
+      name: 'Portfolio Website',
+      techStack: 'Angular | TypeScript | HTML | CSS',
+      descriptionEN: 'My personal website presenting various programming projects. Get a first impression of me and my skills.',
+      descriptionDE: 'Meine persönliche Website, auf der ich verschiedene Programmierprojekte vorstelle. Verschaffen Sie sich einen ersten Eindruck von mir und meinen Fähigkeiten.',
+      url: '#',
+      githubUrl: 'https://github.com/ManuKapolke/portfolio',
+      img: 'assets/img/projects/laptop_portfolio.png',
+      imgPhone: 'assets/img/projects/smartphone_portfolio.png'
+    },
     {
       name: 'Pokédex',
       techStack: 'JavaScript | HTML | CSS | API | Bootstrap',

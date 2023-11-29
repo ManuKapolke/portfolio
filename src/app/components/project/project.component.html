@@ -1,5 +1,6 @@
 <div class="project-container">
-    <a class="img-container" *ngIf="!isReversed()" href="{{ project.url }}" target="_blank">
+    <a class="img-container" *ngIf="!isReversed()" href="{{ project.url }}"
+        target="{{ project.url === '#' ? '_self' : '_blank' }}">
         <img class="img-laptop" src="{{ project.img }}" alt="laptop showing {{ project.name }} project"
             data-aos="flip-up" data-aos-duration="1500">
         <div class="imgPhone-container" [ngStyle]="getStyleForImgPhoneContainer()">
@@ -13,8 +14,8 @@
         <h4>{{ project.techStack }}</h4>
         <p class="project-description">{{ getProjectDescription() }}</p>
         <div class="project-buttons" [ngStyle]="getStyleForButtons()">
-            <a class="btn btn-filled-A" href="{{ project.url }}" target="_blank" data-aos="flip-up" data-aos-delay="500"
-                data-aos-duration="1500" data-aos-offset="-200">
+            <a class="btn btn-filled-A" href="{{ project.url }}" target="{{ project.url === '#' ? '_self' : '_blank' }}"
+                data-aos="flip-up" data-aos-delay="500" data-aos-duration="1500" data-aos-offset="-200">
                 Live Test
             </a>
             <a class="btn btn-unfilled" href="{{ project.githubUrl }}" target="_blank" data-aos="flip-left"
@@ -24,7 +25,8 @@
         </div>
     </div>
 
-    <a class="img-container" *ngIf="isReversed()" href="{{ project.url }}" target="_blank">
+    <a class="img-container" *ngIf="isReversed()" href="{{ project.url }}"
+        target="{{ project.url === '#' ? '_self' : '_blank' }}">
         <img class="img-laptop" src="{{ project.img }}" alt="laptop showing {{ project.name }} project"
             data-aos="flip-up" data-aos-duration="1500">
         <div class="imgPhone-container" [ngStyle]="getStyleForImgPhoneContainer()">

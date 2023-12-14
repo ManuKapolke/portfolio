@@ -8,12 +8,12 @@ import { LayoutService } from '../../services/layout.service';
 })
 export class SectionSkillsComponent {
   public skills = [
-    { name: 'HTML', icon: 'html.png' },
-    { name: 'CSS', icon: 'css.png' },
-    { name: 'Sass/SCSS', icon: 'sass.svg' },
     { name: 'JavaScript', icon: 'javascript.png' },
     { name: 'TypeScript', icon: 'typescript.png' },
     { name: 'Angular', icon: 'angular.png' },
+    { name: 'HTML', icon: 'html.png' },
+    { name: 'CSS', icon: 'css.png' },
+    { name: 'Sass/SCSS', icon: 'sass.svg' },
     { name: 'C++', icon: 'icons8-c++.svg' },
     { name: 'Python', icon: 'python.png' },
     { name: 'GIT', icon: 'git.png' },

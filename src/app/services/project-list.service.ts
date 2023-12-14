@@ -8,7 +8,7 @@ export class ProjectListService {
   public projects: Project[] = [
     {
       name: 'Join',
-      techStack: 'JavaScript | HTML | CSS',
+      techStack: 'JavaScript | HTML | CSS | Figma',
       descriptionEN: 'Task manager inspired by the Kanban System. Create and organize tasks using drag-and-drop functions, assign users and categories.',
       descriptionDE: 'Vom Kanban-System inspirierter Task-Manager. Erstellen und organisieren Sie Aufgaben mit Hilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.',
       url: 'https://join.manukapolke.de',
@@ -18,7 +18,7 @@ export class ProjectListService {
     },
     {
       name: 'El Pollo Loco',
-      techStack: 'JavaScript | HTML | CSS',
+      techStack: 'JavaScript | HTML | SCSS',
       descriptionEN: 'Jump-and-run game, implemented with object-oriented programming. Help Pepe find coins and salsa to defeat a freaked-out giant chicken.',
       descriptionDE: 'Jump-and-Run-Spiel, umgesetzt mit objektorientierter Programmierung. Hilf Pepe, Münzen und Salsa zu finden, um ein durchgedrehtes Riesenhuhn zu besiegen.',
       url: 'https://el-pollo-loco.manukapolke.de',
@@ -28,7 +28,7 @@ export class ProjectListService {
     },
     {
       name: 'Portfolio Website',
-      techStack: 'Angular | TypeScript | HTML | CSS',
+      techStack: 'Angular | TypeScript | HTML | SCSS | Figma',
       descriptionEN: 'My personal website presenting various programming projects. Get a first impression of me and my skills.',
       descriptionDE: 'Meine persönliche Website, auf der ich verschiedene Programmierprojekte vorstelle. Verschaffen Sie sich einen ersten Eindruck von mir und meinen Fähigkeiten.',
       url: '#',
